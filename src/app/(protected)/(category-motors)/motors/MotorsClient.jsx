@@ -483,7 +483,7 @@ const MotorsClient = ({ category, initialProducts, pagination }) => {
           />
         </div>
       </div>
-      {/* {t("Your Marketplace. Your Kingdom.")} */}
+      {/* {t("Your Marketplace. Your Country.")} */}
       {/* Filter Card with Blended Tabs */}
       <div className="max-w-7xl mx-auto -mt-20 relative z-10 px-4">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">

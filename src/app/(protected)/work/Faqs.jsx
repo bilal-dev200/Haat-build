@@ -8,7 +8,7 @@
 //   const faqs = [
 //     {
 //       question: "Is Haat available across Saudi Arabia?",
-//       answer: "Yes—Haat serves buyers and sellers across the Kingdom.",
+//       answer: "Yes—Haat serves buyers and sellers across the Country.",
 //     },
 //     {
 //       question: "Do I need to pay to list?",
@@ -127,7 +127,7 @@
 //       {
 //         id: 1,
 //         question: "Is Haat available across Saudi Arabia?",
-//         answer: "Yes—Haat serves buyers and sellers across the Kingdom.",
+//         answer: "Yes—Haat serves buyers and sellers across the Country.",
 //       },
 //       {
 //         id: 2,
@@ -210,7 +210,7 @@ export const Faqs = () => {
       {
         id: 1,
         question: t("Is Haat available across Saudi Arabia?"),
-        answer: t("Yes—Haat serves buyers and sellers across the Kingdom."),
+        answer: t("Yes—Haat serves buyers and sellers across the Country."),
       },
       {
         id: 2,

@@ -84,6 +84,10 @@ body {
   scrollbar-width: none;
 }
 
+.VIpgJd-ZVi9od-ORHb-OEVmcd {
+  display: none !important;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

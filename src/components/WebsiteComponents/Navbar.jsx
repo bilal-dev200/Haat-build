@@ -10,8 +10,9 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import { useWatchlistStore } from "@/lib/stores/watchlistStore";
-import LanguageSwitcher from "./LanguageSwitcher";
+// import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
+import GoogleTranslate from "./GoogleTranslate";
 import Image from "next/image";
 import { useAuthStore } from "@/lib/stores/authStore";
 import { usePathname } from "next/navigation";
@@ -97,7 +98,7 @@ const Navbar = () => {
               </span>
             </a>
           </div>
-          {/* <LanguageSwitcher /> */}
+          <GoogleTranslate />
         </div>
 
         <div className="order-first sm:order-none w-full sm:w-auto text-center mt-2 sm:mt-0 flex justify-center">

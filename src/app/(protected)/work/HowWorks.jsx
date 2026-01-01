@@ -118,7 +118,7 @@
 //       <h1 className="text-3xl font-bold text-center">{t("How It Works – Haat")}</h1>
 //       <p className="text-center text-gray-700 mt-2 max-w-2xl mx-auto">
 //         {t(
-//           "Simple steps to buy & sell across the Kingdom. Whether you’re here to find a great deal or to reach more buyers, Haat makes trading fast, safe, and straightforward."
+//           "Simple steps to buy & sell across the Country. Whether you’re here to find a great deal or to reach more buyers, Haat makes trading fast, safe, and straightforward."
 //         )}
 //       </p>
 
@@ -352,7 +352,7 @@ export const HowWorks = () => {
       </h1>
       <p className="text-center text-gray-700 mt-2 max-w-2xl mx-auto">
         {t(
-          "Simple steps to buy & sell across the Kingdom. Whether you’re here to find a great deal or to reach more buyers, Haat makes trading fast, safe, and straightforward."
+          "Simple steps to buy & sell across the Country. Whether you’re here to find a great deal or to reach more buyers, Haat makes trading fast, safe, and straightforward."
         )}
       </p>
 

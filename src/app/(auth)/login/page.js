@@ -90,7 +90,7 @@
 
 //           <p>
 //             {t(
-//               "Pick up right where you left off. Log in to access powerful seller tools and insights, manage your listings, messages, and orders — all in one place. Trusted by thousands across the Kingdom."
+//               "Pick up right where you left off. Log in to access powerful seller tools and insights, manage your listings, messages, and orders — all in one place. Trusted by thousands across the Country."
 //             )}
 //           </p>
 //         </div>
@@ -267,7 +267,7 @@ function LoginPageContent() {
           {/* <h2>{t("Let’s Pick Up Where You Left Off")}</h2> */}
           <p>
             {t(
-              "Pick up right where you left off. Log in to access powerful seller tools and insights, manage your listings, messages, and orders — all in one place. Trusted by thousands across the Kingdom."
+              "Pick up right where you left off. Log in to access powerful seller tools and insights, manage your listings, messages, and orders — all in one place. Trusted by thousands across the Country."
             )}
           </p>
         </div>

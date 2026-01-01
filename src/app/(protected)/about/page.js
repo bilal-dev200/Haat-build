@@ -23,7 +23,7 @@ const page = () => {
         />
         <div className="relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold">{t("About Us – Haat")}</h1>
-          <p className="mt-3 text-lg md:text-xl">{t("Your Marketplace. Your Kingdom.")}</p>
+          <p className="mt-3 text-lg md:text-xl">{t("Your Marketplace. Your Country.")}</p>
         </div>
       </section>
 
@@ -94,7 +94,7 @@ const page = () => {
               <h3 className="font-semibold text-xl mb-2">{t("Local Expertise")}</h3>
               <p className="text-gray-600">
                 {t(
-                  "100% focused on the Saudi market. Every feature is tailored to the unique buying and selling habits of people in the Kingdom."
+                  "100% focused on the Saudi market. Every feature is tailored to the unique buying and selling habits of people in the Country."
                 )}
               </p>
             </div>
@@ -139,7 +139,7 @@ const page = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("Our Vision")}</h2>
           <p className="text-lg">
             {t(
-              "To become the Kingdom’s most trusted and widely used online marketplace, where millions of Saudis and residents connect daily."
+              "To become the Country’s most trusted and widely used online marketplace, where millions of Saudis and residents connect daily."
             )}
           </p>
         </div>
@@ -149,7 +149,7 @@ const page = () => {
       <section className="py-12 text-center">
         <blockquote className="text-xl italic font-medium max-w-3xl mx-auto">
           {t(
-            "“At Haat, we’re not just building a platform — we’re building a trusted trade community for the Kingdom.”"
+            "“At Haat, we’re not just building a platform — we’re building a trusted trade community for the Country.”"
           )}
         </blockquote>
       </section>

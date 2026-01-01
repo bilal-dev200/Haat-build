@@ -147,7 +147,7 @@ function ResetPasswordContent() {
           <div className="mx-auto text-center">
             <p>
               {t(
-                "Pick up right where you left off. Log in to access powerful seller tools and insights, manage your listings, messages, and orders — all in one place. Trusted by thousands across the Kingdom."
+                "Pick up right where you left off. Log in to access powerful seller tools and insights, manage your listings, messages, and orders — all in one place. Trusted by thousands across the Country."
               )}
             </p>
           </div>
@@ -344,7 +344,7 @@ function ResetPasswordContent() {
         <div className="mx-auto text-center">
           <p>
             {t(
-              "Pick up right where you left off. Log in to access powerful seller tools and insights, manage your listings, messages, and orders — all in one place. Trusted by thousands across the Kingdom."
+              "Pick up right where you left off. Log in to access powerful seller tools and insights, manage your listings, messages, and orders — all in one place. Trusted by thousands across the Country."
             )}
           </p>
         </div>
