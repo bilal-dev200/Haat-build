@@ -113,7 +113,7 @@ function ResetPasswordContent() {
           <div className="flex justify-center mb-6">
             <Link href="/">
               <Image
-                src="/haat-logo.png"
+                src="/haat-logo-transparent.png"
                 alt="Haat Logo"
                 width={180}
                 height={60}
@@ -178,7 +178,7 @@ function ResetPasswordContent() {
         <div className="flex justify-center mb-6">
           <Link href="/">
             <Image
-              src="/haat-logo.png"
+              src="/haat-logo-transparent.png"
               alt="Haat Logo"
               width={180}
               height={60}

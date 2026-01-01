@@ -104,7 +104,7 @@ const Navbar = () => {
         <div className="order-first sm:order-none w-full sm:w-auto text-center mt-2 sm:mt-0 flex justify-center">
           <Link href="/">
             <Image
-              src="/haat-logo.png"
+              src="/haat-logo-transparent.png"
               alt="Haat Logo"
               width={200}
               height={50}
