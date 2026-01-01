@@ -342,9 +342,9 @@ const UserDetails = ({ profile }) => {
       toast.error("Cover upload failed!");
       console.error("Cover upload failed:", err.message);
     }
-  };   
-   const { t } = useTranslation();
-  
+  };
+  const { t } = useTranslation();
+
 
   return (
     <div className="w-full mx-auto bg-[#FAFAFA] rounded-lg overflow-hidden relative">
@@ -384,7 +384,7 @@ const UserDetails = ({ profile }) => {
 
         {/* Profile Image Section */}
         <div className="absolute left-6 -bottom-16 z-10 md:z-50">
-          <div className="relative w-32 h-32 rounded-full border-4 border-white overflow-hidden flex items-center justify-center bg-[#175f48] text-green-50 text-7xl font-semibold">
+          <div className="relative w-32 h-32 rounded-full border-4 border-white overflow-hidden flex items-center justify-center bg-[#05A650] text-green-50 text-7xl font-semibold">
             {user?.profile_photo ? (
               <Image
                 src={`${Image_URL}${user.profile_photo}`}
@@ -461,9 +461,9 @@ const UserDetails = ({ profile }) => {
               label: "Member Since",
               value: user?.created_at
                 ? new Date(user.created_at).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "short",
-                  })
+                  year: "numeric",
+                  month: "short",
+                })
                 : "",
             },
           ].map((item, i) => (
@@ -518,9 +518,9 @@ const UserDetails = ({ profile }) => {
               label: "Member Since",
               value: user?.created_at
                 ? new Date(user.created_at).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "short",
-                  })
+                  year: "numeric",
+                  month: "short",
+                })
                 : "",
             },
           ].map((item, i) => (
@@ -538,7 +538,7 @@ const UserDetails = ({ profile }) => {
               </div>
               <div className="flex flex-col">
                 <span className="text-xs text-gray-500 leading-tight">
-              {t(item.label)}:
+                  {t(item.label)}:
                 </span>
                 <span className="text-sm text-gray-800 font-medium">
                   {item.value}
@@ -551,7 +551,7 @@ const UserDetails = ({ profile }) => {
         {/* Buttons */}
         <div className="mt-6 flex gap-3 flex-wrap">
           <Button
-    title={t("Log Out")}
+            title={t("Log Out")}
             onClick={() => {
               logout();
               router.push("/login");
@@ -560,7 +560,7 @@ const UserDetails = ({ profile }) => {
           />
           {!profile && (
             <Button
-      title={t("Edit Profile")}
+              title={t("Edit Profile")}
               onClick={() => showComponent("editProfile")}
             />
           )}

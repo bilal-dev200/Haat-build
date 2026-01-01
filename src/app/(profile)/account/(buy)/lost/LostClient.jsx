@@ -157,7 +157,7 @@ const LostClient = () => {
       />
       <div className="min-h-screen text-gray-800 px-4 py-6">
         {/* <div className="text-sm text-gray-600 mb-2">
-        Home / My Ma3rood / Buy / <span className="text-black">Lost</span>
+        Home / My Haat / Buy / <span className="text-black">Lost</span>
       </div> */}
 
         <h1 className="text-2xl font-bold text-green-600 mb-2 uppercase">
@@ -211,7 +211,7 @@ const LostClient = () => {
                         <span className="flex items-center gap-1">
                           {listing.note
                             ? listing.note.split(" ").slice(0, 3).join(" ") +
-                              "..."
+                            "..."
                             : t("Add note")}
                           {listing.note && <FaEdit className="text-xs" />}
                         </span>
@@ -226,10 +226,10 @@ const LostClient = () => {
                           listing?.listing_type === "marketplace"
                             ? `/marketplace`
                             : listing?.listing_type === "property"
-                            ? `/property`
-                            : listing?.listing_type === "motors"
-                            ? `/motors`
-                            : `/${listing?.listing_type}`
+                              ? `/property`
+                              : listing?.listing_type === "motors"
+                                ? `/motors`
+                                : `/${listing?.listing_type}`
                         );
                       },
                     },

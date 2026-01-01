@@ -70,7 +70,7 @@
 //         items={items}
 //         styles={{ nav: "flex justify-start text-sm font-medium bg-white border-b border-gray-200 py-2" }}
 //       />
-      
+
 //     <div className="min-h-screen px-4 py-6 text-gray-800">
 //       <div className="flex items-center justify-between mb-1 flex-wrap gap-2">
 //         <h2 className="text-2xl font-bold text-green-700">NOTIFICATIONS</h2>
@@ -135,9 +135,9 @@
 import NotificationClientPage from './NotificationClientPage';
 
 export const metadata = {
-  title: "Notifications | Ma3rood",
+  title: "Notifications | Haat",
   description:
-    "View your latest notifications, updates, and alerts related to your account activity on Ma3rood.",
+    "View your latest notifications, updates, and alerts related to your account activity on Haat.",
   robots: "index, follow",
 };
 

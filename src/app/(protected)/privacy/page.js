@@ -3,20 +3,20 @@ import React from 'react'
 import { useTranslation } from "react-i18next";
 
 const page = () => {
-  const { t ,i18n} = useTranslation();
-    const isArabic = i18n.language === "ar"; // check current language
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === "ar"; // check current language
 
 
   return (
     <div className="mx-auto px-14 py-14 text-gray-800 leading-relaxed">
-      <h1 className="text-3xl font-bold mb-2">{t("Privacy Policy for Ma3rood")}</h1>
+      <h1 className="text-3xl font-bold mb-2">{t("Privacy Policy for Haat")}</h1>
 
       <p className="mb-6">
-        {t(" Welcome to Ma3rood (“we,” “us,” or “our”). Your privacy and trust matter greatly to us.This Privacy Policy explains how we collect, use, share, and protect your personal information when you use our online marketplace service (“Service”).")}
+        {t(" Welcome to Haat (“we,” “us,” or “our”). Your privacy and trust matter greatly to us.This Privacy Policy explains how we collect, use, share, and protect your personal information when you use our online marketplace service (“Service”).")}
       </p>
 
       <p className="mb-6">
-        {t("By using Ma3rood, you acknowledge this policy and consent to our data practices.")}
+        {t("By using Haat, you acknowledge this policy and consent to our data practices.")}
       </p>
 
       {/* Section 1 */}
@@ -55,20 +55,18 @@ const page = () => {
       <table className="w-full border mb-6 text-sm">
         <thead className="bg-gray-100">
           <tr>
-               <th
-            className={`border px-4 py-2 ${
-              isArabic ? "text-right" : "text-left"
-            }`}
-          >
-            {t("Type of Recipient")}
-          </th>
-          <th
-            className={`border px-4 py-2 ${
-              isArabic ? "text-right" : "text-left"
-            }`}
-          >
-            {t("Purpose & Conditions")}
-          </th>
+            <th
+              className={`border px-4 py-2 ${isArabic ? "text-right" : "text-left"
+                }`}
+            >
+              {t("Type of Recipient")}
+            </th>
+            <th
+              className={`border px-4 py-2 ${isArabic ? "text-right" : "text-left"
+                }`}
+            >
+              {t("Purpose & Conditions")}
+            </th>
 
           </tr>
         </thead>

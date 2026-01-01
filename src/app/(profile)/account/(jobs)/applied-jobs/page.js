@@ -1,9 +1,9 @@
 import AppliedJobsClient from './AppliedJobsClient';
 
 export const metadata = {
-  title: "Job List | Ma3rood",
+  title: "Job List | Haat",
   description:
-    "Create and manage your professional Job List on Ma3rood. Showcase your skills, experience, and qualifications to attract top employers and find your next opportunity.",
+    "Create and manage your professional Job List on Haat. Showcase your skills, experience, and qualifications to attract top employers and find your next opportunity.",
   robots: "index, follow",
 };
 

@@ -2,8 +2,8 @@ import LayoutWrapper from "@/components/LayoutWrapper";
 import Sidebar from "@/components/WebsiteComponents/ReuseableComponenets/Sidebar";
 
 export const metadata = {
-  title: "Account | Ma3rood",
-  description: "Account page for Ma3rood",
+  title: "Account | Haat",
+  description: "Account page for Haat",
 };
 
 export default function ProfileLayout({ children }) {

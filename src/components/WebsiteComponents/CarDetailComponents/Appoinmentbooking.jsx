@@ -3,45 +3,45 @@ import React from "react";
 
 export default function AppointmentBooking() {
 
-    // In the same file
+  // In the same file
 
-const Card = ({ children, className = "" }) => (
-  <div className={`bg-gray-100 rounded-2xl  ${className}`}>
-    {children}
-  </div>
-);
+  const Card = ({ children, className = "" }) => (
+    <div className={`bg-gray-100 rounded-2xl  ${className}`}>
+      {children}
+    </div>
+  );
 
-const CardContent = ({ children, className = "" }) => (
-  <div className={`p-4 ${className}`}>
-    {children}
-  </div>
-);
+  const CardContent = ({ children, className = "" }) => (
+    <div className={`p-4 ${className}`}>
+      {children}
+    </div>
+  );
 
-const Button = ({ children, className = "", ...props }) => (
-  <button
-    {...props}
-    className={`inline-flex items-center justify-center font-medium rounded-full transition-colors duration-200 px-9 py-2 focus:outline-none focus:ring-2 focus:ring-offset-2 ${className}`}
-  >
-    {children}
-  </button>
+  const Button = ({ children, className = "", ...props }) => (
+    <button
+      {...props}
+      className={`inline-flex items-center justify-center font-medium rounded-full transition-colors duration-200 px-9 py-2 focus:outline-none focus:ring-2 focus:ring-offset-2 ${className}`}
+    >
+      {children}
+    </button>
 
-  
-);
 
-const beforeYouBuyItems = [
-  {
-    id: 1,
-    icon: "/my.png",
-    title: "Pre-purchase Inspection",
-    description: "Book pre-purchase inspection",
-  },
-  {
-    id: 2,
-    icon: "/TRADEME.png",
-    title: "Car Insurance",
-    description: "Get 15% off car insurance with Trade Me",
-  },
-];
+  );
+
+  const beforeYouBuyItems = [
+    {
+      id: 1,
+      icon: "/my.png",
+      title: "Pre-purchase Inspection",
+      description: "Book pre-purchase inspection",
+    },
+    {
+      id: 2,
+      icon: "/TRADEME.png",
+      title: "Car Insurance",
+      description: "Get 15% off car insurance with Trade Me",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-white p-8">
@@ -86,7 +86,7 @@ const beforeYouBuyItems = [
                     <option value="tomorrow">Tomorrow</option>
                     <option value="next-week">Next Week</option>
                   </select>
-                  <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#175f48]">
+                  <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#05A650]">
                     ▼
                   </span>
                 </div>
@@ -103,7 +103,7 @@ const beforeYouBuyItems = [
                     <option value="afternoon">Afternoon</option>
                     <option value="evening">Evening</option>
                   </select>
-                  <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#175f48]">
+                  <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#05A650]">
                     ▼
                   </span>
                 </div>
@@ -150,51 +150,51 @@ const beforeYouBuyItems = [
           </div>
         </div>
       </div>
-<div className="mt-32">
-    <div className="text-center  sm:gap-0 mb-10">
-            <div
-              className="inline-block border-b-2"
-              style={{ borderColor: "#7B7B7B" }}
+      <div className="mt-32">
+        <div className="text-center  sm:gap-0 mb-10">
+          <div
+            className="inline-block border-b-2"
+            style={{ borderColor: "#7B7B7B" }}
+          >
+            <h2 className="text-2xl font-bold text-gray-900">
+              Before you Buy
+            </h2>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {beforeYouBuyItems.map((item) => (
+            <Card
+              key={item.id}
+              className="text-center p-6 flex flex-col h-full"
             >
-              <h2 className="text-2xl font-bold text-gray-900">
-                Before you Buy
-              </h2>
-            </div>
-          </div>
+              <CardContent className="flex flex-col flex-1 justify-between">
 
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-    {beforeYouBuyItems.map((item) => (
-      <Card
-        key={item.id}
-        className="text-center p-6 flex flex-col h-full"
-      >
-        <CardContent className="flex flex-col flex-1 justify-between">
-          
-          {/* Top: Logo + Text */}
-          <div>
-            {/* Logo */}
-            <div className="flex justify-center">
-              <img src={item.icon} alt={item.title} />
-            </div>
+                {/* Top: Logo + Text */}
+                <div>
+                  {/* Logo */}
+                  <div className="flex justify-center">
+                    <img src={item.icon} alt={item.title} />
+                  </div>
 
-            {/* Text */}
-            <div className="mt-4">
-              <h3 className="font-semibold text-gray-900 mb-2">
-                {item.title}
-              </h3>
-              <p className="text-sm text-gray-600">{item.description}</p>
-            </div>
-          </div>
+                  {/* Text */}
+                  <div className="mt-4">
+                    <h3 className="font-semibold text-gray-900 mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">{item.description}</p>
+                  </div>
+                </div>
 
-          {/* Bottom: Button */}
-          <Button className="bg-green-500 hover:bg-green-600 text-white mt-6">
-            Book Now
-          </Button>
-        </CardContent>
-      </Card>
-    ))}
-  </div>
-</div>
+                {/* Bottom: Button */}
+                <Button className="bg-green-500 hover:bg-green-600 text-white mt-6">
+                  Book Now
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
 
 
 

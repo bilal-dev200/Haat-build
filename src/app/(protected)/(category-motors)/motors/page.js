@@ -6,18 +6,18 @@ import {
 import MotorsClient from "./MotorsClient";
 
 export const metadata = {
-  title: "Cars, Bikes & Vehicles for Sale in Saudi Arabia | Ma3rood Motors",
+  title: "Cars, Bikes & Vehicles for Sale in Saudi Arabia | Haat Motors",
   description:
-    "Discover the latest cars, bikes, and commercial vehicles for sale in Saudi Arabia. Find new and used vehicles from trusted sellers across major cities with Ma3rood Motors.",
+    "Discover the latest cars, bikes, and commercial vehicles for sale in Saudi Arabia. Find new and used vehicles from trusted sellers across major cities with Haat Motors.",
 };
 
-export default async function page () {
-    const [catResult, listings] = await Promise.all([
+export default async function page() {
+  const [catResult, listings] = await Promise.all([
     fetchAllCategories(),
     fetchAllListingsByFilter({
       listing_type: "motors",
-     pagination: {
-      page: 1,
+      pagination: {
+        page: 1,
       }
     }),
   ]);
@@ -32,11 +32,11 @@ export default async function page () {
 
   return (
     <div className="bg-white min-h-screen">
-      
+
       <MotorsClient
-      category={catResult}
-            initialProducts={listings?.data || []}
-            pagination={pagination}
+        category={catResult}
+        initialProducts={listings?.data || []}
+        pagination={pagination}
       />
     </div>
   );

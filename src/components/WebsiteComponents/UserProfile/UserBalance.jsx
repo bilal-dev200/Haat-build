@@ -13,7 +13,7 @@ const UserBalance = () => {
       <div className="bg-[#FAFAFA] rounded-lg p-6 flex flex-col items-center justify-center">
         <h2 className="text-2xl font-bold mb-2">{t("My balances")}</h2>
         <p className="text-2xl font-semibold mt-5 mb-1">
-          {t("Ma3rood balance")}
+          {t("Haat balance")}
         </p>
         <h1 className="text-3xl font-semibold mb-4 price">$</h1>
         <a href="#" className="text-green-500 text-sm mb-4 underline">

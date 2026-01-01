@@ -7,8 +7,8 @@
 
 //   const faqs = [
 //     {
-//       question: "Is Ma3rood available across Saudi Arabia?",
-//       answer: "Yes—Ma3rood serves buyers and sellers across the Kingdom.",
+//       question: "Is Haat available across Saudi Arabia?",
+//       answer: "Yes—Haat serves buyers and sellers across the Kingdom.",
 //     },
 //     {
 //       question: "Do I need to pay to list?",
@@ -16,14 +16,14 @@
 //         "You can post standard listings for free. Optional upgrades (like featuring/promotions) may be available.",
 //     },
 //     {
-//       question: "Does Ma3rood handle delivery or payments?",
+//       question: "Does Haat handle delivery or payments?",
 //       answer:
 //         "Delivery and payment are agreed between buyer and seller. In-app options may be available in select cities/categories and will be shown at checkout when enabled.",
 //     },
 //     {
 //       question: "How are disputes handled?",
 //       answer:
-//         "Keep all messages on Ma3rood and share evidence via chat. Use Report on the listing or user, and our Trust & Safety team will review.",
+//         "Keep all messages on Haat and share evidence via chat. Use Report on the listing or user, and our Trust & Safety team will review.",
 //     },
 //   ];
 
@@ -117,7 +117,7 @@
 // export const Faqs = () => {
 //   const [activeIndex, setActiveIndex] = useState(null);
 //     const { t } = useTranslation();
-  
+
 
 //   // Hardcoded FAQ array
 //   const faqData = {
@@ -126,8 +126,8 @@
 //     pages_faq_details: [
 //       {
 //         id: 1,
-//         question: "Is Ma3rood available across Saudi Arabia?",
-//         answer: "Yes—Ma3rood serves buyers and sellers across the Kingdom.",
+//         question: "Is Haat available across Saudi Arabia?",
+//         answer: "Yes—Haat serves buyers and sellers across the Kingdom.",
 //       },
 //       {
 //         id: 2,
@@ -136,7 +136,7 @@
 //       },
 //       {
 //         id: 3,
-//         question: "Does Ma3rood handle delivery or payments?",
+//         question: "Does Haat handle delivery or payments?",
 //         answer: "Delivery and payment are agreed between buyers and sellers.",
 //       },
 //       {
@@ -209,8 +209,8 @@ export const Faqs = () => {
     pages_faq_details: [
       {
         id: 1,
-        question: t("Is Ma3rood available across Saudi Arabia?"),
-        answer: t("Yes—Ma3rood serves buyers and sellers across the Kingdom."),
+        question: t("Is Haat available across Saudi Arabia?"),
+        answer: t("Yes—Haat serves buyers and sellers across the Kingdom."),
       },
       {
         id: 2,
@@ -219,7 +219,7 @@ export const Faqs = () => {
       },
       {
         id: 3,
-        question: t("Does Ma3rood handle delivery or payments?"),
+        question: t("Does Haat handle delivery or payments?"),
         answer: t("Delivery and payment are agreed between buyers and sellers."),
       },
       {

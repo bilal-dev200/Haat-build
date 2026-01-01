@@ -10,7 +10,7 @@ export default function MoreOptionsDropdown() {
       <div>
         <button
           type="button"
-          className="inline-flex justify-center items-center gap-1 text-sm font-medium text-[#175f48] hover:text-blue-600"
+          className="inline-flex justify-center items-center gap-1 text-sm font-medium text-[#05A650] hover:text-blue-600"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-haspopup="true"

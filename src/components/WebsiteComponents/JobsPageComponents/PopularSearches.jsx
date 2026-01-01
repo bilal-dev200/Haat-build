@@ -38,11 +38,10 @@ export default function PopularSearches() {
             <button
               key={index}
               onClick={() => setActiveTab(index)}
-              className={`pb-4 px-1 border-b-1 whitespace-nowrap transition-all duration-300 ease-in-out ${
-                activeTab === index
+              className={`pb-4 px-1 border-b-1 whitespace-nowrap transition-all duration-300 ease-in-out ${activeTab === index
                   ? "border-[#7B7B7B] text-gray-900 font-medium"
                   : "border-transparent text-gray-500 hover:text-gray-700 hover:border-[#7B7B7B]"
-              }`}
+                }`}
             >
               {tab}
             </button>
@@ -64,7 +63,7 @@ export default function PopularSearches() {
               <a
                 key={i}
                 href="#"
-                className="block text-[#175f48] hover:text-blue-600 hover:underline"
+                className="block text-[#05A650] hover:text-blue-600 hover:underline"
               >
                 {city}
               </a>

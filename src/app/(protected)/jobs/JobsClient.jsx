@@ -11,126 +11,126 @@ import {
 import Breadcrumbs from "@/components/WebsiteComponents/ReuseableComponenets/Breadcrumbs";
 
 // --- CONSTANTS ---
-const JOBS_PER_PAGE = 10; 
+const JOBS_PER_PAGE = 10;
 
 const JobsClient = ({ category, initialProducts }) => {
-    const { locations, getAllLocations } = useLocationStore();
-    const { t } = useTranslation();
+  const { locations, getAllLocations } = useLocationStore();
+  const { t } = useTranslation();
 
-    // --- STATE ---
-    const [jobListings, setJobListings] = useState(initialProducts || []);
-    const [loading, setLoading] = useState(false);
-    const [isInitialLoad, setIsInitialLoad] = useState(true);
-    const [hasMore, setHasMore] = useState(true); 
-    const [filters, setFilters] = useState({
-      type: "search",
-      search: "",
-      category_id: null,
-      // Removed unnecessary price/area/condition fields for jobs context, added job-specific ones:
-      region: "",
-      governorate: "",
-      work_type: "",
-      minimum_pay_type: "",
-      min_amount: "",
-      max_amount: "",
-      // Pagination
-      limit: JOBS_PER_PAGE, 
-      offset: 0, 
-    });
+  // --- STATE ---
+  const [jobListings, setJobListings] = useState(initialProducts || []);
+  const [loading, setLoading] = useState(false);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const [hasMore, setHasMore] = useState(true);
+  const [filters, setFilters] = useState({
+    type: "search",
+    search: "",
+    category_id: null,
+    // Removed unnecessary price/area/condition fields for jobs context, added job-specific ones:
+    region: "",
+    governorate: "",
+    work_type: "",
+    minimum_pay_type: "",
+    min_amount: "",
+    max_amount: "",
+    // Pagination
+    limit: JOBS_PER_PAGE,
+    offset: 0,
+  });
 
-    // --- MEMOIZED DATA ---
-    const country = locations.find((c) => c.id == 1);
-    const regions = country?.regions || [];
-    
-    const governorates = useMemo(() => {
-      const region = regions.find((r) => r.name === filters.region);
-      return region?.governorates || [];
-    }, [regions, filters.region]);
+  // --- MEMOIZED DATA ---
+  const country = locations.find((c) => c.id == 1);
+  const regions = country?.regions || [];
 
-    // --- API FETCHER ---
-    const fetchJobs = async (currentFilters, append = false) => {
-      console.log('fetch', currentFilters)
-        if (!append) setJobListings([]); // Clear list on new filter search
-        setLoading(true);
-        setIsInitialLoad(false);
+  const governorates = useMemo(() => {
+    const region = regions.find((r) => r.name === filters.region);
+    return region?.governorates || [];
+  }, [regions, filters.region]);
 
-        try {
-            // Find IDs for API payload
-            const regionObj = regions.find(r => r.name === currentFilters.region);
-            const governorateObj = governorates.find(g => g.name === currentFilters.governorate);
-            
-            const payload = {
-                ...currentFilters,
-                region_id: regionObj?.id || "",
-                governorate_id: governorateObj?.id || "",
-            };
+  // --- API FETCHER ---
+  const fetchJobs = async (currentFilters, append = false) => {
+    console.log('fetch', currentFilters)
+    if (!append) setJobListings([]); // Clear list on new filter search
+    setLoading(true);
+    setIsInitialLoad(false);
 
-            const response = await JobsApi.getListingsByFilter(payload);
-            const newJobs = response || []; // Adjust to match your API response structure
+    try {
+      // Find IDs for API payload
+      const regionObj = regions.find(r => r.name === currentFilters.region);
+      const governorateObj = governorates.find(g => g.name === currentFilters.governorate);
 
-            setJobListings(prev => (append ? [...prev, ...newJobs] : newJobs));
-            setHasMore(newJobs.length === currentFilters.limit); 
-
-        } catch (error) {
-            console.error("Failed to fetch job listings:", error);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-
-    // --- EFFECTS ---
-
-    // 1. Load Locations on Mount
-    useEffect(() => {
-        getAllLocations(); 
-    }, [getAllLocations]);
-
-    // 2. Trigger fetch when offset/limit changes (for pagination/initial load)
-    useEffect(() => {
-        // Only fetch if it's not the very first mount or if offset > 0 (for scroll)
-        if (filters.offset === 0 && isInitialLoad && jobListings.length > 0) {
-          // If initial data is provided and offset is 0, don't refetch
-          setIsInitialLoad(false);
-          return; 
-        }
-
-        fetchJobs(filters, filters.offset > 0); 
-    }, [filters.offset]); // Only re-run when offset changes
-
-    // 3. Reset offset when any main filter changes
-    const handleFilterChange = (key, value) => {
-      setFilters(prev => ({
-        ...prev,
-        [key]: value,
-        // Reset offset to 0 when any filter changes
-        offset: 0, 
-      }));
-    };
-
-    // 4. Intersection Observer for Scroll Pagination
-    useEffect(() => {
-      const loadMoreTrigger = document.querySelector("#load-more-trigger");
-      if (!loadMoreTrigger) return;
-
-      const observer = new IntersectionObserver(
-          (entries) => {
-              if (entries[0].isIntersecting && hasMore && !loading) {
-                  // Increment offset to trigger the fetch in useEffect(filters.offset)
-                  setFilters(prev => ({ ...prev, offset: prev.offset + prev.limit }));
-              }
-          },
-          { threshold: 1.0 }
-      );
-
-      observer.observe(loadMoreTrigger);
-
-      return () => {
-          if (observer) {
-              observer.unobserve(loadMoreTrigger);
-          }
+      const payload = {
+        ...currentFilters,
+        region_id: regionObj?.id || "",
+        governorate_id: governorateObj?.id || "",
       };
-    }, [hasMore, loading]);
+
+      const response = await JobsApi.getListingsByFilter(payload);
+      const newJobs = response || []; // Adjust to match your API response structure
+
+      setJobListings(prev => (append ? [...prev, ...newJobs] : newJobs));
+      setHasMore(newJobs.length === currentFilters.limit);
+
+    } catch (error) {
+      console.error("Failed to fetch job listings:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
+  // --- EFFECTS ---
+
+  // 1. Load Locations on Mount
+  useEffect(() => {
+    getAllLocations();
+  }, [getAllLocations]);
+
+  // 2. Trigger fetch when offset/limit changes (for pagination/initial load)
+  useEffect(() => {
+    // Only fetch if it's not the very first mount or if offset > 0 (for scroll)
+    if (filters.offset === 0 && isInitialLoad && jobListings.length > 0) {
+      // If initial data is provided and offset is 0, don't refetch
+      setIsInitialLoad(false);
+      return;
+    }
+
+    fetchJobs(filters, filters.offset > 0);
+  }, [filters.offset]); // Only re-run when offset changes
+
+  // 3. Reset offset when any main filter changes
+  const handleFilterChange = (key, value) => {
+    setFilters(prev => ({
+      ...prev,
+      [key]: value,
+      // Reset offset to 0 when any filter changes
+      offset: 0,
+    }));
+  };
+
+  // 4. Intersection Observer for Scroll Pagination
+  useEffect(() => {
+    const loadMoreTrigger = document.querySelector("#load-more-trigger");
+    if (!loadMoreTrigger) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && hasMore && !loading) {
+          // Increment offset to trigger the fetch in useEffect(filters.offset)
+          setFilters(prev => ({ ...prev, offset: prev.offset + prev.limit }));
+        }
+      },
+      { threshold: 1.0 }
+    );
+
+    observer.observe(loadMoreTrigger);
+
+    return () => {
+      if (observer) {
+        observer.unobserve(loadMoreTrigger);
+      }
+    };
+  }, [hasMore, loading]);
 
 
   return (
@@ -141,14 +141,14 @@ const JobsClient = ({ category, initialProducts }) => {
         style={{ background: "rgb(23, 95, 72)" }}
       >
         <div className=' pb-6 w-full'>
-        <Breadcrumbs
-        items={[{ label: "Home", href: "/" }, { label: "Jobs" }]}
-        styles={{
-          nav: "flex justify-start px-2 md:px-10 text-sm font-medium",
-        }}
-      />
+          <Breadcrumbs
+            items={[{ label: "Home", href: "/" }, { label: "Jobs" }]}
+            styles={{
+              nav: "flex justify-start px-2 md:px-10 text-sm font-medium",
+            }}
+          />
           <div className="mt-3 border-b border-white opacity-40 mx-2 md:mx-8"></div>
-      </div>
+        </div>
         <div className="max-w-6xl mx-auto w-full">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug mb-6 sm:mb-8">
             FIND YOUR NEXT JOB IN <br className="hidden sm:block" /> SAUDI ARABIA
@@ -159,7 +159,7 @@ const JobsClient = ({ category, initialProducts }) => {
       {/* Filter Card */}
       <div className="max-w-5xl mx-auto -mt-20 relative z-10 px-4">
         <div className="bg-white rounded-lg p-4 sm:p-6 shadow-lg">
-         {/* Top Buttons */}
+          {/* Top Buttons */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6">
             {/* Search Button */}
             <button
@@ -167,7 +167,7 @@ const JobsClient = ({ category, initialProducts }) => {
                 handleFilterChange("type", filters.type === "search" ? "all" : "search")
               }
               className={`w-full sm:w-auto border border-gray-300 px-6 py-2 rounded-md flex items-center justify-center transition text-black
-                ${filters.type === "search" ? "bg-[#175f48] text-white" : "bg-white "}`}
+                ${filters.type === "search" ? "bg-[#05A650] text-white" : "bg-white "}`}
             >
               <Search className="w-4 h-4 mr-2" /> Search for jobs
             </button>
@@ -178,7 +178,7 @@ const JobsClient = ({ category, initialProducts }) => {
                 handleFilterChange("type", filters.type === "category" ? "all" : "category")
               }
               className={`w-full sm:w-auto border border-gray-300 px-6 py-2 rounded-md flex items-center justify-center transition
-                ${filters.type === "category" ? "bg-[#175f48] text-white" : "bg-white text-black"}`}
+                ${filters.type === "category" ? "bg-[#05A650] text-white" : "bg-white text-black"}`}
             >
               <List className="w-4 h-4 mr-2" /> Browse Job Categories
             </button>
@@ -236,14 +236,14 @@ const JobsClient = ({ category, initialProducts }) => {
                 name="work_type"
                 value={
                   filters.work_type
-        ? [
-            { value: "full_time", label: "Full Time" },
-            { value: "part_time", label: "Part Time" },
-            { value: "remote", label: "Remote" },
-            { value: "freelance", label: "Freelance" },
-            { value: "contract", label: "Contract" },
-          ].find((opt) => opt.value === filters.work_type) || null
-        : null
+                    ? [
+                      { value: "full_time", label: "Full Time" },
+                      { value: "part_time", label: "Part Time" },
+                      { value: "remote", label: "Remote" },
+                      { value: "freelance", label: "Freelance" },
+                      { value: "contract", label: "Contract" },
+                    ].find((opt) => opt.value === filters.work_type) || null
+                    : null
                 }
                 onChange={(selected) =>
                   handleFilterChange("work_type", selected?.value || "")
@@ -268,13 +268,13 @@ const JobsClient = ({ category, initialProducts }) => {
               <Select
                 name="minimum_pay_type"
                 value={
-                   filters.minimum_pay_type
-        ? [
-            { value: "hourly", label: "Hourly" },
-            { value: "daily", label: "Daily" },
-            { value: "monthly", label: "Monthly" },
-          ].find((opt) => opt.value === filters.minimum_pay_type) || null
-        : null
+                  filters.minimum_pay_type
+                    ? [
+                      { value: "hourly", label: "Hourly" },
+                      { value: "daily", label: "Daily" },
+                      { value: "monthly", label: "Monthly" },
+                    ].find((opt) => opt.value === filters.minimum_pay_type) || null
+                    : null
                 }
                 onChange={(selected) =>
                   handleFilterChange("minimum_pay_type", selected?.value || "")
@@ -401,9 +401,9 @@ const JobsClient = ({ category, initialProducts }) => {
             <div className="hidden sm:flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 w-full">
               <div></div>
               <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 w-full sm:w-auto sm:justify-end">
-                <button 
-                  onClick={() => fetchJobs({...filters, offset: 0}, false)} // Force search on button click
-                  className="w-full sm:w-auto bg-[#175f48] hover:bg-blue-600 text-white px-6 py-2 rounded-md"
+                <button
+                  onClick={() => fetchJobs({ ...filters, offset: 0 }, false)} // Force search on button click
+                  className="w-full sm:w-auto bg-[#05A650] hover:bg-blue-600 text-white px-6 py-2 rounded-md"
                 >
                   Search Jobs
                 </button>
@@ -412,8 +412,8 @@ const JobsClient = ({ category, initialProducts }) => {
 
             {/* Search Jobs Button for mobile (below everything) */}
             <div className="sm:hidden mt-2">
-              <button 
-                onClick={() => fetchJobs({...filters, offset: 0}, false)} // Force search on mobile click
+              <button
+                onClick={() => fetchJobs({ ...filters, offset: 0 }, false)} // Force search on mobile click
                 className="w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md"
               >
                 Search Jobs
@@ -424,31 +424,31 @@ const JobsClient = ({ category, initialProducts }) => {
       </div>
 
       <section className="mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-        <TrendingJobs jobListings={jobListings}/>
-        
+        <TrendingJobs jobListings={jobListings} />
+
         {/* Loading Indicator */}
-        {loading && <div className="text-center py-4 text-[#175f48] font-semibold">
+        {loading && <div className="text-center py-4 text-[#05A650] font-semibold">
           {/* Loading more jobs... */}
-          </div>} 
-        
+        </div>}
+
         {/* Intersection Observer target for scroll pagination */}
         {hasMore && !loading && (
           // This invisible div is the anchor for the Intersection Observer
           <div id="load-more-trigger" className="h-1 my-8"></div>
         )}
-        
+
         {/* End of results message */}
         {!hasMore && jobListings.length > 0 && !loading && (
-            <div className="text-center py-4 text-gray-500">
-                You've reached the end of the job listings.
-            </div>
+          <div className="text-center py-4 text-gray-500">
+            You've reached the end of the job listings.
+          </div>
         )}
 
         {/* No results message */}
         {!loading && jobListings.length === 0 && !isInitialLoad && (
-            <div className="text-center py-12 text-gray-600 text-xl">
-                No jobs found matching your filters. Try adjusting your search!
-            </div>
+          <div className="text-center py-12 text-gray-600 text-xl">
+            No jobs found matching your filters. Try adjusting your search!
+          </div>
         )}
       </section>
     </div>

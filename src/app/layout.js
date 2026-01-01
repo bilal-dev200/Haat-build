@@ -7,9 +7,9 @@ import FeedbackButton from "@/components/WebsiteComponents/FeedbackForm/Feedback
 import FontSync from "@/components/WebsiteComponents/FontSync";
 
 export const metadata = {
-  title: "Ma3rood",
-  description: "Ma3rood - The Kingdom's marketplace for everything from household items and cars to homes, jobs, and services.",
-other: {
+  title: "Haat",
+  description: "Haat - The Kingdom's marketplace for everything from household items and cars to homes, jobs, and services.",
+  other: {
     "google-site-verification": "QOcVF2O0EwymmQj0mtALBvLdFn8PN1QjHWk2pIKwaME",
   },
 };

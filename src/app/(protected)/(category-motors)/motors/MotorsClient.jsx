@@ -511,7 +511,7 @@ const MotorsClient = ({ category, initialProducts, pagination }) => {
                   }}
                   className={`flex flex-col md:flex-row items-center justify-center gap-2 p-3 md:px-5 md:py-3 flex-1 min-w-[110px] sm:min-w-[130px] border-r border-b border-gray-200 last:border-r-0 transition-colors
       ${activeTab === tab.key
-                      ? "bg-white text-[#175f48]"
+                      ? "bg-white text-[#05A650]"
                       : "bg-gray-50 text-gray-600 hover:bg-gray-100"
                     }`}
                 >
@@ -539,7 +539,7 @@ const MotorsClient = ({ category, initialProducts, pagination }) => {
             {/* Initial Filter Grid */}
             {activeTab !== "allcat" && (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
-                
+
                 {/* Condition */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -821,7 +821,7 @@ const MotorsClient = ({ category, initialProducts, pagination }) => {
                     </div>
                   )}
 
-<div>
+                <div>
                   <label className="block mb-1 text-sm font-medium">
                     {t("Region")}
                   </label>
@@ -932,7 +932,7 @@ const MotorsClient = ({ category, initialProducts, pagination }) => {
                     loadMotorListings();
                   }}
                   type="button"
-                  className="w-full sm:w-auto bg-[#175f48] hover:bg-green-700 text-white px-6 py-2 rounded-md transition-colors text-center"
+                  className="w-full sm:w-auto bg-[#05A650] hover:bg-green-700 text-white px-6 py-2 rounded-md transition-colors text-center"
                 >
                   {t("View listings")}
                 </button>
@@ -947,7 +947,7 @@ const MotorsClient = ({ category, initialProducts, pagination }) => {
                     <h3
                       className={`text-lg font-semibold mb-3 cursor-pointer hover:underline ${filters.category_id === parent.id
                         ? "text-blue-600 underline" // 🔵 Highlight parent differently
-                        : "text-[#175f48]"
+                        : "text-[#05A650]"
                         }`}
                       onClick={() => {
                         setFilters({ ...filters, category_id: parent.id });

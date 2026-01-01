@@ -8,7 +8,7 @@ export default function ServiceSidebar({ service }) {
       <BookServiceForm service={service} />
       <section className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
         <h3 className="text-sm font-semibold text-slate-900">
-          Why book on Ma3rood?
+          Why book on Haat?
         </h3>
         <ul className="mt-4 space-y-3 text-sm text-slate-600">
           <li className="flex items-start gap-2">

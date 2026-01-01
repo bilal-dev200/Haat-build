@@ -6,13 +6,13 @@ export async function generateMetadata({ params }) {
   const { product: productSlug } = await params;
   const productData = await fetchProduct(productSlug);
   return {
-    title: `${productData?.listing?.title || "Product"} | Ma3rood`,
+    title: `${productData?.listing?.title || "Product"} | Haat`,
     description: productData?.subtitle?.replace(/<[^>]+>/g, "")?.slice(0, 160) || "View product details.",
     // openGraph: {
-    //   title: `${productData?.title || "Product"} | Ma3rood`,
+    //   title: `${productData?.title || "Product"} | Haat`,
     //   description: productData?.subtitle?.replace(/<[^>]+>/g, "")?.slice(0, 160) || "View product details.",
     //   url: `https://yourdomain.com/marketplace/${productData?.category?.slug}/${productData?.slug}`,
-    //   siteName: "Ma3rood",
+    //   siteName: "Haat",
     //   images: [
     //     {
     //       url: productData?.images?.[0]?.image_path

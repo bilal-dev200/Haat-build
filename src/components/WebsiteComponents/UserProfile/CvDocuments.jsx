@@ -29,11 +29,11 @@ const CvDocuments = () => {
         <p>You do not currently have any saved documents.</p>
         <p>
           You can save documents such as CVs or cover letters for later use when
-          you apply for a job using Ma3rood
+          you apply for a job using Haat
         </p>
 
         <button className="mt-4 bg-green-500 text-white text-xs px-3 py-1 rounded-[6px]">
-          my Ma3rood
+          my Haat
         </button>
 
         <p className="mt-3">

@@ -425,7 +425,7 @@ const PropertiesClient = ({
                   }}
                   className={`flex flex-col md:flex-row items-center justify-center gap-2 p-3 md:px-5 md:py-3 flex-1 min-w-[110px] sm:min-w-[130px] border-r border-b border-gray-200 last:border-r-0 transition-colors
       ${activeTab === tab.key
-                      ? "bg-white text-[#175f48]"
+                      ? "bg-white text-[#05A650]"
                       : "bg-gray-50 text-gray-600 hover:bg-gray-100"
                     }`}
                 >
@@ -664,7 +664,7 @@ const PropertiesClient = ({
                 <button
                   onClick={handleViewListings}
                   type="button"
-                  className="w-full cursor-pointer sm:w-auto bg-[#175f48] hover:bg-green-700 text-white px-6 py-2 rounded-md transition-colors text-center"
+                  className="w-full cursor-pointer sm:w-auto bg-[#05A650] hover:bg-green-700 text-white px-6 py-2 rounded-md transition-colors text-center"
                 >
                   {t("View listings")}
                 </button>
@@ -679,7 +679,7 @@ const PropertiesClient = ({
                     <h3
                       className={`text-lg font-semibold mb-3 cursor-pointer hover:underline ${filters.category_id === parent.id
                         ? "text-blue-600 underline" // 🔵 Highlight parent differently
-                        : "text-[#175f48]"
+                        : "text-[#05A650]"
                         }`}
                       onClick={() => {
                         setFilters({ ...filters, category_id: parent.id });

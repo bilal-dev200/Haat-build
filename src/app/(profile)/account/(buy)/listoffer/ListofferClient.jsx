@@ -166,7 +166,7 @@ const ListofferClient = () => {
       />
       <div className="min-h-screen text-gray-800 px-2 py-6">
         {/* <div className="text-sm text-gray-600 mb-2">
-        Home / My Ma3rood / Buyss/ <span className="text-black">Offers</span>
+        Home / My Haat / Buyss/ <span className="text-black">Offers</span>
       </div> */}
 
         <h1 className="text-2xl font-bold text-green-600 uppercase mb-1">
@@ -231,9 +231,9 @@ const ListofferClient = () => {
                         <span className="flex items-center gap-1">
                           {listing?.listing.note
                             ? listing.listing.note
-                                .split(" ")
-                                .slice(0, 3)
-                                .join(" ") + "..."
+                              .split(" ")
+                              .slice(0, 3)
+                              .join(" ") + "..."
                             : t("Add note")}
                           {listing?.listing.note && (
                             <FaEdit className="text-xs" />
@@ -250,10 +250,10 @@ const ListofferClient = () => {
                             listing?.listing_type === "marketplace"
                               ? `/marketplace`
                               : listing?.listing_type === "property"
-                              ? `/property`
-                              : listing?.listing_type === "motors"
-                              ? `/motors`
-                              : `/${listing?.listing_type}`
+                                ? `/property`
+                                : listing?.listing_type === "motors"
+                                  ? `/motors`
+                                  : `/${listing?.listing_type}`
                           }
                           className="text-blue-600 hover:underline"
                         >

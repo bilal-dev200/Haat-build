@@ -11,9 +11,9 @@
 // import { SearchFilter } from "./SearchFilter";
 
 // export const metadata = {
-//   title: "Marketplace | Ma3rood",
+//   title: "Marketplace | Haat",
 //   description:
-//     "Browse and discover the best deals on Ma3rood Marketplace. Find products, categories, and more.",
+//     "Browse and discover the best deals on Haat Marketplace. Find products, categories, and more.",
 //   robots: "index, follow",
 // };
 
@@ -37,7 +37,7 @@
 //         <div
 //           className="w-full rounded-b-[80px] text-white text-left"
 //           style={{
-//             background: "#175f48",
+//             background: "#05A650",
 //             // background: "linear-gradient(to right, #469BDB, #3587C4)",
 //           }}
 //         >
@@ -93,8 +93,8 @@
 import Marketplace from "./Marketplace";
 
 export const metadata = {
-  title: "Marketplace | Ma3rood",
-  description: "Browse and discover the best deals on Ma3rood Marketplace. Find products, categories, and more.",
+  title: "Marketplace | Haat",
+  description: "Browse and discover the best deals on Haat Marketplace. Find products, categories, and more.",
   robots: "index, follow",
 };
 

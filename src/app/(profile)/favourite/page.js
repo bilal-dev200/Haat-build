@@ -237,9 +237,9 @@
 import FavouriteClientPage from './FavouriteClientPage';
 
 export const metadata = {
-  title: "Favourites | Ma3rood",
+  title: "Favourites | Haat",
   description:
-    "Manage your favourite categories and sellers on Ma3rood. View saved listings, sellers, and stay updated with new items.",
+    "Manage your favourite categories and sellers on Haat. View saved listings, sellers, and stay updated with new items.",
   robots: "index, follow",
 };
 

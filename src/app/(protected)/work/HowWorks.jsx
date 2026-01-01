@@ -34,7 +34,7 @@
 //     {
 //       title: t("Chat Securely"),
 //       description: t(
-//         "Message sellers in-app to ask questions, request more photos, or confirm availability. Keep all coordination inside Ma3rood chat for safety."
+//         "Message sellers in-app to ask questions, request more photos, or confirm availability. Keep all coordination inside Haat chat for safety."
 //       ),
 //       image: "/work4.png",
 //     },
@@ -85,7 +85,7 @@
 //     {
 //       title: t("Chat Securely"),
 //       description: t(
-//         "Message sellers in-app to ask questions, request more photos, or confirm availability. Keep all coordination inside Ma3rood chat for safety."
+//         "Message sellers in-app to ask questions, request more photos, or confirm availability. Keep all coordination inside Haat chat for safety."
 //       ),
 //       image: "/work4.png",
 //     },
@@ -115,10 +115,10 @@
 //   return (
 //     <div>
 //       {/* Page Heading */}
-//       <h1 className="text-3xl font-bold text-center">{t("How It Works – Ma3rood")}</h1>
+//       <h1 className="text-3xl font-bold text-center">{t("How It Works – Haat")}</h1>
 //       <p className="text-center text-gray-700 mt-2 max-w-2xl mx-auto">
 //         {t(
-//           "Simple steps to buy & sell across the Kingdom. Whether you’re here to find a great deal or to reach more buyers, Ma3rood makes trading fast, safe, and straightforward."
+//           "Simple steps to buy & sell across the Kingdom. Whether you’re here to find a great deal or to reach more buyers, Haat makes trading fast, safe, and straightforward."
 //         )}
 //       </p>
 
@@ -140,7 +140,7 @@
 //     {/* Text Right */}
 //     <p className="text-base sm:text-lg text-center sm:text-left max-w-md text-gray-700 leading-relaxed">
 //       {t(
-//         "New to Ma3rood? Create your account with just a few steps, verify your profile, and instantly start exploring categories or listing your first item to reach buyers quickly."
+//         "New to Haat? Create your account with just a few steps, verify your profile, and instantly start exploring categories or listing your first item to reach buyers quickly."
 //       )}
 //     </p>
 //   </div>
@@ -212,7 +212,7 @@
 //       <TrustSafety/>
 //       {/* <Faqs/> */}
 //       <Faqs/>
-      
+
 //     </div>
 //   );
 // };
@@ -251,7 +251,7 @@ export const HowWorks = () => {
     {
       title: t("Chat Securely"),
       description: t(
-        "Message sellers in-app to ask questions, request more photos, or confirm availability. Keep all coordination inside Ma3rood chat for safety."
+        "Message sellers in-app to ask questions, request more photos, or confirm availability. Keep all coordination inside Haat chat for safety."
       ),
       image: "/work4.png",
     },
@@ -301,26 +301,26 @@ export const HowWorks = () => {
     //   image: "/work3.png",
     // },
     {
-    title: t("Review Your Listing"),
-    description: t(
-      "Double-check photos, description, price, and condition before publishing. Verified listings attract more buyers and build credibility."
-    ),
-    image: "/work3.png",
-  },
+      title: t("Review Your Listing"),
+      description: t(
+        "Double-check photos, description, price, and condition before publishing. Verified listings attract more buyers and build credibility."
+      ),
+      image: "/work3.png",
+    },
     // {
     //   title: t("Chat Securely"),
     //   description: t(
-    //     "Message sellers in-app to ask questions, request more photos, or confirm availability. Keep all coordination inside Ma3rood chat for safety."
+    //     "Message sellers in-app to ask questions, request more photos, or confirm availability. Keep all coordination inside Haat chat for safety."
     //   ),
     //   image: "/work4.png",
     // },
-      {
-    title: t("Chat with Buyers"),
-    description: t(
-      "Respond quickly to messages. Answer buyer questions, share extra details if needed, and keep all communication inside Ma3rood chat for security."
-    ),
-    image: "/work4.png",
-  },
+    {
+      title: t("Chat with Buyers"),
+      description: t(
+        "Respond quickly to messages. Answer buyer questions, share extra details if needed, and keep all communication inside Haat chat for security."
+      ),
+      image: "/work4.png",
+    },
     {
       title: t("Make an Offer or Proceed"),
       description: t(
@@ -348,11 +348,11 @@ export const HowWorks = () => {
     <div>
       {/* Page Heading */}
       <h1 className="text-3xl font-bold text-center">
-        {t("How It Works – Ma3rood")}
+        {t("How It Works – Haat")}
       </h1>
       <p className="text-center text-gray-700 mt-2 max-w-2xl mx-auto">
         {t(
-          "Simple steps to buy & sell across the Kingdom. Whether you’re here to find a great deal or to reach more buyers, Ma3rood makes trading fast, safe, and straightforward."
+          "Simple steps to buy & sell across the Kingdom. Whether you’re here to find a great deal or to reach more buyers, Haat makes trading fast, safe, and straightforward."
         )}
       </p>
 
@@ -371,7 +371,7 @@ export const HowWorks = () => {
           />
           <p className="text-base sm:text-lg text-center sm:text-left max-w-md text-gray-700 leading-relaxed">
             {t(
-              "New to Ma3rood? Create your account with just a few steps, verify your profile, and instantly start exploring categories or listing your first item to reach buyers quickly."
+              "New to Haat? Create your account with just a few steps, verify your profile, and instantly start exploring categories or listing your first item to reach buyers quickly."
             )}
           </p>
         </div>

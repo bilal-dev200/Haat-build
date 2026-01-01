@@ -4,53 +4,53 @@ import Link from "next/link";
 import { FaBriefcase } from "react-icons/fa";
 
 export default function JobCard({ title, company, location, date, description, logo, banner, slug }) {
- const parseDateSafely = (dateStr) => {
-  // ISO format (2025-01-20 or 2025-01-20T10:30:00Z)
-  if (/^\d{4}-\d{2}-\d{2}/.test(dateStr)) {
-    return new Date(dateStr);
-  }
+  const parseDateSafely = (dateStr) => {
+    // ISO format (2025-01-20 or 2025-01-20T10:30:00Z)
+    if (/^\d{4}-\d{2}-\d{2}/.test(dateStr)) {
+      return new Date(dateStr);
+    }
 
-  // Slash format
-  if (/^\d{2}\/\d{2}\/\d{4}$/.test(dateStr)) {
-    const [part1, part2, year] = dateStr.split("/").map(Number);
+    // Slash format
+    if (/^\d{2}\/\d{2}\/\d{4}$/.test(dateStr)) {
+      const [part1, part2, year] = dateStr.split("/").map(Number);
 
-    // If first part > 12 → must be DD/MM/YYYY
-    if (part1 > 12) {
+      // If first part > 12 → must be DD/MM/YYYY
+      if (part1 > 12) {
+        return new Date(Date.UTC(year, part2 - 1, part1));
+      }
+
+      // If second part > 12 → must be MM/DD/YYYY
+      if (part2 > 12) {
+        return new Date(Date.UTC(year, part1 - 1, part2));
+      }
+
+      // Ambiguous (01/02/2025) → assume backend is DD/MM
       return new Date(Date.UTC(year, part2 - 1, part1));
     }
 
-    // If second part > 12 → must be MM/DD/YYYY
-    if (part2 > 12) {
-      return new Date(Date.UTC(year, part1 - 1, part2));
-    }
-
-    // Ambiguous (01/02/2025) → assume backend is DD/MM
-    return new Date(Date.UTC(year, part2 - 1, part1));
-  }
-
-  return new Date(dateStr);
-};
+    return new Date(dateStr);
+  };
 
   // Function to get "Listed X hours/days ago"
-const getRelativeTime = (createdAt) => {
-  if (!createdAt) return "Date not available";
+  const getRelativeTime = (createdAt) => {
+    if (!createdAt) return "Date not available";
 
-  const posted = parseDateSafely(createdAt);
-  if (isNaN(posted)) return "Invalid date";
+    const posted = parseDateSafely(createdAt);
+    if (isNaN(posted)) return "Invalid date";
 
-  const now = new Date();
-  const diffMs = now.getTime() - posted.getTime();
-  const diffMinutes = Math.floor(diffMs / (1000 * 60));
-  const diffHours = Math.floor(diffMinutes / 60);
-  const diffDays = Math.floor(diffHours / 24);
+    const now = new Date();
+    const diffMs = now.getTime() - posted.getTime();
+    const diffMinutes = Math.floor(diffMs / (1000 * 60));
+    const diffHours = Math.floor(diffMinutes / 60);
+    const diffDays = Math.floor(diffHours / 24);
 
-  if (diffMinutes < 1) return "Listed just now";
-  if (diffMinutes < 60) return `Listed ${diffMinutes} minute${diffMinutes > 1 ? "s" : ""} ago`;
-  if (diffHours < 24) return `Listed ${diffHours} hour${diffHours > 1 ? "s" : ""} ago`;
-  if (diffDays === 1) return "Listed 1 day ago";
+    if (diffMinutes < 1) return "Listed just now";
+    if (diffMinutes < 60) return `Listed ${diffMinutes} minute${diffMinutes > 1 ? "s" : ""} ago`;
+    if (diffHours < 24) return `Listed ${diffHours} hour${diffHours > 1 ? "s" : ""} ago`;
+    if (diffDays === 1) return "Listed 1 day ago";
 
-  return `Listed ${diffDays} days ago`;
-};
+    return `Listed ${diffDays} days ago`;
+  };
 
 
 
@@ -75,7 +75,7 @@ const getRelativeTime = (createdAt) => {
           {location}
         </div>
         <span className="mx-2">|</span>
-        <span className="text-[#175f48] text-sm">{getRelativeTime(date)}</span>
+        <span className="text-[#05A650] text-sm">{getRelativeTime(date)}</span>
 
       </div>
 
@@ -108,7 +108,7 @@ const getRelativeTime = (createdAt) => {
         </div>
       </div>
 
-      {/* <button className="w-full bg-[#175f48] hover:bg-blue-600 text-white py-2 px-4 rounded-md transition-colors">
+      {/* <button className="w-full bg-[#05A650] hover:bg-blue-600 text-white py-2 px-4 rounded-md transition-colors">
         Apply Now
       </button> */}
     </Link>

@@ -42,7 +42,7 @@ const Navbar = () => {
     { name: "Contact Us", href: "/contact-us" },
   ];
 
-    const mobileNavLinks = [
+  const mobileNavLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "How It Works", href: "/work" },
@@ -57,34 +57,34 @@ const Navbar = () => {
     <header className="w-full border-b shadow-sm ">
       <div className="flex items-center justify-between px-4 md:px-6 py-3 bg-white flex-wrap">
         <div className="flex items-center gap-4 md:gap-8 text-sm">
-        {pathname !== "/account" && (
-          <Link href={isLoggedIn ? "/account" : `/login?callbackUrl=${encodeURIComponent(pathname)}`}>
-            <div className="flex items-center gap-2 cursor-pointer hover:text-green-500 transition-colors">
-              {isLoggedIn ? (
-                user?.profileImage ? (
-                  <Image
-                    src={user.profileImage}
-                    alt={user?.username || "User"}
-                    width={30}
-                    height={30}
-                    className="rounded-full object-cover"
-                  />
+          {pathname !== "/account" && (
+            <Link href={isLoggedIn ? "/account" : `/login?callbackUrl=${encodeURIComponent(pathname)}`}>
+              <div className="flex items-center gap-2 cursor-pointer hover:text-green-500 transition-colors">
+                {isLoggedIn ? (
+                  user?.profileImage ? (
+                    <Image
+                      src={user.profileImage}
+                      alt={user?.username || "User"}
+                      width={30}
+                      height={30}
+                      className="rounded-full object-cover"
+                    />
+                  ) : (
+                    <div
+                      className="flex w-8 h-8 rounded-full bg-green-600 items-center justify-center text-white font-bold"
+                    >
+                      {user?.username?.charAt(0).toUpperCase() || "U"}
+                    </div>
+                  )
                 ) : (
-                  <div
-                    className="flex w-8 h-8 rounded-full bg-green-600 items-center justify-center text-white font-bold"
-                  >
-                    {user?.username?.charAt(0).toUpperCase() || "U"}
-                  </div>
-                )
-              ) : (
-                <FaUser className="text-lg" />
-              )}
-              {/* <span> */}
+                  <FaUser className="text-lg" />
+                )}
+                {/* <span> */}
                 {isLoggedIn ? <span className="hidden md:flex"> {user?.username} </span> || <span>{t("Account")}</span> : <span>{t("Login")}</span>}
-              {/* </span> */}
-            </div>
-          </Link>
-        )}
+                {/* </span> */}
+              </div>
+            </Link>
+          )}
 
 
           <div className="hidden sm:flex items-center gap-2 hover:text-green-500">
@@ -103,11 +103,11 @@ const Navbar = () => {
         <div className="order-first sm:order-none w-full sm:w-auto text-center mt-2 sm:mt-0 flex justify-center">
           <Link href="/">
             <Image
-              src="/Ma3rood-logo-green2.png"
-              alt="Al Ma3rood Logo"
-              width={256}
+              src="/haat-logo.png"
+              alt="Haat Logo"
+              width={200}
               height={50}
-              style={{ height: "auto" }}
+              // style={{ height: "auto" }}
               className="mx-auto md:ltr:ml-[-80px] md:rtl:mr-[-80px]"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority

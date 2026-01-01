@@ -17,7 +17,7 @@ export default function RegisterPage() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      router.replace("/"); 
+      router.replace("/");
     }
   }, [router]);
 
@@ -63,7 +63,7 @@ export default function RegisterPage() {
 
     <div className="min-h-screen w-full flex flex-col lg:flex-row ">
       {/* Left side (Blue section - hidden on mobile) */}
-      <div className="hidden lg:flex w-full lg:w-[40%] bg-[#175f48] text-white flex-col justify-between p-8 lg:p-10">
+      <div className="hidden lg:flex w-full lg:w-[40%] bg-[#05A650] text-white flex-col justify-between p-8 lg:p-10">
         <div>
           <h1 className="text-3xl sm:text-4xl font-semibold mb-4 leading-snug">
             {t("Register to Trade,")} <br /> <span>{t("Buy & Sell")}</span>
@@ -85,14 +85,14 @@ export default function RegisterPage() {
 
       {/* Right side (Form section) */}
       <div className="w-full lg:w-[60%] flex items-center justify-center bg-white px-4 py-20 min-h-screen">
-  
+
         <div className="w-full max-w-xl">
-            <div className="text-right -mt20">
+          {/* <div className="text-right -mt20">
             <LanguageSwitcher
               className="absolute  "
               buttonClassName="bg-green-600 text-green"
             />
-          </div>
+          </div> */}
           {error && (
             <div className="mb-4 p-3 bg-red-100 text-red-700 rounded relative">
               {error}
@@ -106,7 +106,7 @@ export default function RegisterPage() {
             </div>
           )}
 
-      
+
           <h2
             className={`text-2xl font-bold mb-6 text-center ${i18n.language === "ar" ? "text-right" : "lg:text-left"
               }`}

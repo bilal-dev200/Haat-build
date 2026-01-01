@@ -76,7 +76,7 @@ const ShareListingModal = ({ isOpen, onClose, shareUrl, title }) => {
           </h2>
           <button
             onClick={onClose}
-            className="text-[#175f48] hover:text-green-600"
+            className="text-[#05A650] hover:text-green-600"
           >
             <CloseIcon className="w-5 h-5" />
           </button>
@@ -88,7 +88,7 @@ const ShareListingModal = ({ isOpen, onClose, shareUrl, title }) => {
             onClick={handleShareEmail}
             className="flex items-center space-x-3 cursor-pointer border-b border-gray-300 pb-3 hover:bg-gray-50 rounded-md px-2 transition"
           >
-            <Mail className="w-5 h-5 text-[#175f48]" />
+            <Mail className="w-5 h-5 text-[#05A650]" />
             <span className="text-black">Email</span>
           </li>
 
@@ -104,7 +104,7 @@ const ShareListingModal = ({ isOpen, onClose, shareUrl, title }) => {
             onClick={handleShareTwitter}
             className="flex items-center space-x-3 cursor-pointer border-b border-gray-300 pb-3 hover:bg-gray-50 rounded-md px-2 transition"
           >
-            <XIcon className="w-5 h-5 text-[#175f48]" />
+            <XIcon className="w-5 h-5 text-[#05A650]" />
             <span className="text-black">Share on X (Twitter)</span>
           </li>
 
@@ -112,7 +112,7 @@ const ShareListingModal = ({ isOpen, onClose, shareUrl, title }) => {
             onClick={handleShareFacebook}
             className="flex items-center space-x-3 cursor-pointer border-b border-gray-300 pb-3 hover:bg-gray-50 rounded-md px-2 transition"
           >
-            <FacebookIcon className="w-5 h-5 text-[#175f48]" />
+            <FacebookIcon className="w-5 h-5 text-[#05A650]" />
             <span className="text-black">Facebook</span>
           </li>
 
@@ -120,7 +120,7 @@ const ShareListingModal = ({ isOpen, onClose, shareUrl, title }) => {
             onClick={handleCopyLink}
             className="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 rounded-md px-2 transition"
           >
-            <Copy className="w-5 h-5 text-[#175f48]" />
+            <Copy className="w-5 h-5 text-[#05A650]" />
             <span className="text-black">Copy Link</span>
           </li>
         </ul>

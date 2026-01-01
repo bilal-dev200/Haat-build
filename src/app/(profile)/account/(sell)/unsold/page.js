@@ -303,10 +303,10 @@ import UnsoldClient from "./UnsoldClient";
 // }
 
 export const metadata = {
-  title: "Unsold products | Ma3rood",
+  title: "Unsold products | Haat",
   description:
- "View and manage all the offers you've received on your listings.",
-   robots: "index, follow",
+    "View and manage all the offers you've received on your listings.",
+  robots: "index, follow",
 };
 
 export default function Page() {

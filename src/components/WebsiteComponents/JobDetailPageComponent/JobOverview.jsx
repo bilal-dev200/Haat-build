@@ -76,12 +76,12 @@ export default function JobOverview({ product }) {
             </button>
             {console.log(product?.user?.id, user?.id)}
             {product?.user?.id !== user?.id && (
-            <button
-              onClick={handleApplyClick}
-              className="bg-[#175f48] hover:bg-blue-600 text-white px-5 py-2 rounded-md text-sm"
-            >
-              Apply Now
-            </button>
+              <button
+                onClick={handleApplyClick}
+                className="bg-[#05A650] hover:bg-blue-600 text-white px-5 py-2 rounded-md text-sm"
+              >
+                Apply Now
+              </button>
             )}
           </div>
         </div>

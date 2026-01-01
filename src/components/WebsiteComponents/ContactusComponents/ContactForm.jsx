@@ -19,7 +19,7 @@ const ContactForm = () => {
   const { user } = useAuthStore();
   const [category, setCategory] = useState("Account");
   const [helpWith, setHelpWith] = useState("Emails");
-  const [option, setOption] = useState("trouble receiving Ma3rood emails");
+  const [option, setOption] = useState("trouble receiving Haat emails");
   const { locations, getAllLocations } = useLocationStore();
 
   useEffect(() => {
@@ -433,7 +433,7 @@ const ContactForm = () => {
           value={option}
           onChange={(e) => setOption(e.target.value)}
           options={[
-            t("trouble receiving Ma3rood emails"),
+            t("trouble receiving Haat emails"),
             t("email preferences"),
             t("unsubscribe help"),
           ]}

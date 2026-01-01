@@ -158,7 +158,7 @@
 //         }}
 //       />
 //       <div className="min-h-screen text-gray-800 px-1 py-6">
-        
+
 
 //         <h1 className="text-2xl font-bold text-green-600 uppercase mb-1">Won</h1>
 
@@ -246,10 +246,10 @@
 import WonClient from './WonClient';
 
 export const metadata = {
-  title: "Won | Ma3rood",
+  title: "Won | Haat",
   description:
- "View and manage all the offers you've received on your listings.",
-   robots: "index, follow",
+    "View and manage all the offers you've received on your listings.",
+  robots: "index, follow",
 };
 
 export default function Page() {

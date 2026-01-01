@@ -1,6 +1,6 @@
 import React from "react";
 
-const AboutMa3roodJobs = () => {
+const AboutHaatJobs = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
       <div className="bg-white">
@@ -11,7 +11,7 @@ const AboutMa3roodJobs = () => {
             style={{ borderColor: "#7B7B7B" }}
           >
             <h2 className="text-2xl font-bold text-gray-900 mb-2">
-              About Ma3rood Jobs
+              About Haat Jobs
             </h2>
           </div>
         </div>
@@ -62,4 +62,4 @@ const AboutMa3roodJobs = () => {
   );
 };
 
-export default AboutMa3roodJobs;
+export default AboutHaatJobs;

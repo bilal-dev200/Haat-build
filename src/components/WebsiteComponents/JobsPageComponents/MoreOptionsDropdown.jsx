@@ -22,10 +22,10 @@ const MoreOptionsDropdown = () => {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="text-[#175f48] hover:text-blue-600 text-sm flex items-center"
+        className="text-[#05A650] hover:text-blue-600 text-sm flex items-center"
       >
         More Options
-        <span className="ml-1 text-[#175f48]">▼</span>
+        <span className="ml-1 text-[#05A650]">▼</span>
       </button>
 
       {isOpen && (

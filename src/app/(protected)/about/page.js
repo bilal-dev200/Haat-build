@@ -22,7 +22,7 @@ const page = () => {
           className="object-cover brightness-50"
         />
         <div className="relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold">{t("About Us – Ma3rood")}</h1>
+          <h1 className="text-4xl md:text-6xl font-bold">{t("About Us – Haat")}</h1>
           <p className="mt-3 text-lg md:text-xl">{t("Your Marketplace. Your Kingdom.")}</p>
         </div>
       </section>
@@ -33,7 +33,7 @@ const page = () => {
           <h2 className="text-3xl font-bold mb-4">{t("Who We Are")}</h2>
           <p className="leading-relaxed">
             {t(
-              "Ma3rood is Saudi Arabia’s modern, mobile-first marketplace designed to connect buyers and sellers with ease, trust, and efficiency. Whether you’re searching for a family car, a new home, a job opportunity, or unique household items, Ma3rood brings it all together in one simple, secure platform."
+              "Haat is Saudi Arabia’s modern, mobile-first marketplace designed to connect buyers and sellers with ease, trust, and efficiency. Whether you’re searching for a family car, a new home, a job opportunity, or unique household items, Haat brings it all together in one simple, secure platform."
             )}
           </p>
           <p className="mt-4 leading-relaxed">
@@ -43,7 +43,7 @@ const page = () => {
           </p>
         </div>
         <div className="flex justify-center">
-          <Image src="/hero1.jpg" alt={t("Ma3rood App")} width={500} height={400} />
+          <Image src="/hero1.jpg" alt={t("Haat App")} width={500} height={400} />
         </div>
       </section>
 
@@ -84,10 +84,10 @@ const page = () => {
         </div>
       </section>
 
-      {/* Why Ma3rood */}
+      {/* Why Haat */}
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">{t("Why Ma3rood?")}</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t("Why Haat?")}</h2>
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg">
               <FaGlobe className="text-green-600 text-3xl mb-3" />
@@ -149,7 +149,7 @@ const page = () => {
       <section className="py-12 text-center">
         <blockquote className="text-xl italic font-medium max-w-3xl mx-auto">
           {t(
-            "“At Ma3rood, we’re not just building a platform — we’re building a trusted trade community for the Kingdom.”"
+            "“At Haat, we’re not just building a platform — we’re building a trusted trade community for the Kingdom.”"
           )}
         </blockquote>
       </section>

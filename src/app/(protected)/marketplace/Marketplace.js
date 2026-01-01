@@ -56,7 +56,7 @@ export default async function Marketplace({ searchParams }) {
       <div className="">
         <div
           className="w-full rounded-b-[80px] text-white text-left"
-          style={{ background: "#175f48" }}
+          style={{ background: "#05A650" }}
         >
           <Breadcrumbs
             items={[{ label: "Home", href: "/" }, { label: "Marketplace" }]}

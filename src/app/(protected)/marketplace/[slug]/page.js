@@ -11,13 +11,13 @@ export async function generateMetadata({ params, searchParams }) {
   const allCategories = await fetchAllCategories();
   const currentCategory = allCategories?.categories?.data?.find((cat) => cat.id == categoryId);
   return {
-    title: `${currentCategory?.name || slug} | Ma3rood`,
+    title: `${currentCategory?.name || slug} | Haat`,
     // description: slug?.subtitle?.replace(/<[^>]+>/g, "")?.slice(0, 160) || "View product details.",
     // openGraph: {
-    //   title: `${productData?.title || "Product"} | Ma3rood`,
+    //   title: `${productData?.title || "Product"} | Haat`,
     //   description: productData?.subtitle?.replace(/<[^>]+>/g, "")?.slice(0, 160) || "View product details.",
     //   url: `https://yourdomain.com/marketplace/${productData?.category?.slug}/${productData?.slug}`,
-    //   siteName: "Ma3rood",
+    //   siteName: "Haat",
     //   images: [
     //     {
     //       url: productData?.images?.[0]?.image_path

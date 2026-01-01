@@ -226,9 +226,7 @@ const GridLayout = () => {
       <div
         className=" px-4 py-16 text-center text-white rounded-b-[80px]"
         style={{
-          background: "#175f48", //Dark Green
-          // background: '#29a048', //Light Green
-          // background: "linear-gradient(to right, #129cbd, #087590)",
+          background: "#05A650", //Dark Green
         }}
       >
         <div className="mx-auto max-w-4xl">
@@ -237,12 +235,12 @@ const GridLayout = () => {
           </h1>
           <p className=" text-sm mb-4 opacity-90">
             {t(
-              "Ma3rood — The Kingdom’s marketplace for everything from household items and cars to homes, jobs, and services."
+              "Haat — The marketplace for everything from household items and cars to homes, jobs, and services."
             )}
           </p>
           <p className="text-xs text-center text-amber-200 mb-4 opacity-90 w-3/4 mx-auto">
             {t(
-              "Please note: Ma3rood is currently under development. This MVP website is a limited release to test core features and gather your feedback."
+              "Please note: Haat is currently under development. This MVP website is a limited release to test core features and gather your feedback."
             )}
           </p>
 

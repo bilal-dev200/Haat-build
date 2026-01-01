@@ -42,7 +42,7 @@ export default function JobDescriptionAndSidebar({ product }) {
             <ul className="space-y-3">
               {key_points.map((point, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="w-2 h-2 mt-2 mr-3 bg-[#175f48] rounded-full"></span>
+                  <span className="w-2 h-2 mt-2 mr-3 bg-[#05A650] rounded-full"></span>
                   <span className="text-gray-700">{point}</span>
                 </li>
               ))}
@@ -85,7 +85,7 @@ export default function JobDescriptionAndSidebar({ product }) {
           <div className="p-5 space-y-4">
             {company_name && (
               <div className="text-center border-b border-gray-100 pb-3">
-                <h3 className="text-lg font-semibold text-[#175f48]">
+                <h3 className="text-lg font-semibold text-[#05A650]">
                   {company_name}
                 </h3>
                 <p className="text-xs text-gray-500 mt-1">
@@ -99,7 +99,7 @@ export default function JobDescriptionAndSidebar({ product }) {
             <div className="space-y-2 text-sm text-gray-700">
               {governorate?.name && region?.name && (
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-[#175f48]" />
+                  <MapPin className="w-4 h-4 text-[#05A650]" />
                   <span>
                     {governorate.name}, {region.name}
                   </span>
@@ -108,21 +108,21 @@ export default function JobDescriptionAndSidebar({ product }) {
 
               {contact_name && (
                 <div className="flex items-center gap-2">
-                  <CiUser className="text-[#175f48] w-5 h-5" />{" "}
+                  <CiUser className="text-[#05A650] w-5 h-5" />{" "}
                   <span>{contact_name}</span>
                 </div>
               )}
 
               {contact_email && (
                 <div className="flex items-center gap-2 break-all">
-                  <Mail className="w-4 h-4 text-[#175f48]" />
+                  <Mail className="w-4 h-4 text-[#05A650]" />
                   <span>{contact_email}</span>
                 </div>
               )}
 
               {contact_phone && (
                 <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-[#175f48]" />
+                  <Phone className="w-4 h-4 text-[#05A650]" />
                   <span>{contact_phone}</span>
                 </div>
               )}
@@ -130,7 +130,7 @@ export default function JobDescriptionAndSidebar({ product }) {
 
             <button
               onClick={() => setShowShareModal(true)}
-              className="w-full bg-[#175f48] hover:bg-[#0f3c2e] text-white text-sm font-medium rounded-xl py-2 mt-4 transition-colors"
+              className="w-full bg-[#05A650] hover:bg-[#0f3c2e] text-white text-sm font-medium rounded-xl py-2 mt-4 transition-colors"
             >
               Share this Listing
             </button>
@@ -145,38 +145,38 @@ export default function JobDescriptionAndSidebar({ product }) {
       />
 
       {/* FULLSCREEN SLIDER MODAL */}
-{fullscreenImage !== null && (
-  <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[9999]">
-    
-    {/* Close Button */}
-    <button
-      className="absolute top-6 right-6 text-white bg-black bg-opacity-50 p-2 rounded-full z-[10000]"
-      onClick={() => setFullscreenImage(null)}
-    >
-      <X className="w-6 h-6" />
-    </button>
+      {fullscreenImage !== null && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[9999]">
 
-    {/* Slider */}
-    <Swiper
-      modules={[Navigation]}
-      navigation
-      initialSlide={fullscreenImage} // index number
-      loop={true}
-      className="w-full max-w-4xl"
-    >
-      {media_files.map((file, index) => (
-        <SwiperSlide key={index}>
-          <div className="flex items-center justify-center w-full h-full">
-            <img
-              src={`${Image_URL}${file.file_path}`}
-              className="max-h-[90vh] max-w-[90vw] object-contain rounded-lg"
-            />
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  </div>
-)}
+          {/* Close Button */}
+          <button
+            className="absolute top-6 right-6 text-white bg-black bg-opacity-50 p-2 rounded-full z-[10000]"
+            onClick={() => setFullscreenImage(null)}
+          >
+            <X className="w-6 h-6" />
+          </button>
+
+          {/* Slider */}
+          <Swiper
+            modules={[Navigation]}
+            navigation
+            initialSlide={fullscreenImage} // index number
+            loop={true}
+            className="w-full max-w-4xl"
+          >
+            {media_files.map((file, index) => (
+              <SwiperSlide key={index}>
+                <div className="flex items-center justify-center w-full h-full">
+                  <img
+                    src={`${Image_URL}${file.file_path}`}
+                    className="max-h-[90vh] max-w-[90vw] object-contain rounded-lg"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      )}
 
     </div>
   );

@@ -134,7 +134,7 @@ const EditContactDetails = () => {
     formData.append("closest_district", data.closestDistrict || "");
     // formData.append(
     //   "billing_address",
-    //   data.billingAddress || "Ma3rood Billing, XYZ Plaza"
+    //   data.billingAddress || "Haat Billing, XYZ Plaza"
     // );
     // formData.append("street_address", data.streetAddress || "Shahrah-e-Faisal");
     // formData.append("apartment", data.apartment || "Apartment 12B");
@@ -408,9 +408,8 @@ const EditContactDetails = () => {
                     countryCodeEditable={false}
                     value={field.value || ""}
                     onChange={(value) => field.onChange(value)} // ✅ update field value properly
-                    inputClass={`w-full p-2 border rounded-md ${
-                      errors.mobile ? "border-red-500" : "border-gray-300"
-                    }`}
+                    inputClass={`w-full p-2 border rounded-md ${errors.mobile ? "border-red-500" : "border-gray-300"
+                      }`}
                     inputStyle={{
                       width: "100%",
                       height: "40px",

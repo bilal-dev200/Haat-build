@@ -15,7 +15,7 @@ export default function Page() {
   useEffect(() => {
     let active = true;
     setIsLoading(true);
-    
+
     (async () => {
       try {
         const [categoryTree, locationData] = await Promise.all([
@@ -23,12 +23,12 @@ export default function Page() {
           locationsApi.getAllLocations(),
         ]);
         if (!active) return;
-        
+
         const formattedCategories = transformServiceCategories(
           categoryTree?.data ?? categoryTree?.categories ?? categoryTree ?? []
         ).filter((category) => category.id);
         const formattedRegions = transformRegionsResponse(locationData);
-        
+
         const meta = {
           categories: formattedCategories,
           regions: formattedRegions,
@@ -46,7 +46,7 @@ export default function Page() {
         );
       }
     })();
-    
+
     return () => {
       active = false;
     };
@@ -61,7 +61,7 @@ export default function Page() {
             List your expertise
           </p>
           <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
-            Create a Ma3rood service listing in minutes.
+            Create a Haat service listing in minutes.
           </h1>
           <p className="mt-4 max-w-2xl text-sm sm:text-base text-white/80">
             Share your skills, add availability, and reach ready-to-book

@@ -57,7 +57,7 @@
 //       setFilteredListings(allListings);
 //       return;
 //     }
-  
+
 //     const filtered = (allListings || []).filter((listing) => {
 //       const createdAt = new Date(listing.created_at);
 //       return createdAt >= threshold;
@@ -97,10 +97,10 @@
 //       />
 //     <div className="min-h-screen text-gray-800 px-2 py-6">
 //       {/* <div className="text-sm text-gray-600 mb-2">
-//         Home / My Ma3rood / Buyss/ <span className="text-black">Offers</span>
+//         Home / My Haat / Buyss/ <span className="text-black">Offers</span>
 //       </div> */}
 
-  
+
 //       <h1 className="text-2xl font-bold text-green-600 uppercase mb-1">
 //         Offers
 //       </h1>
@@ -173,10 +173,10 @@
 import ListofferClient from './ListofferClient';
 
 export const metadata = {
-  title: "ListOffer | Ma3rood",
+  title: "ListOffer | Haat",
   description:
- "View and manage all the offers you've received on your listings.",
-   robots: "index, follow",
+    "View and manage all the offers you've received on your listings.",
+  robots: "index, follow",
 };
 
 export default function Page() {

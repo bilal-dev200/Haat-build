@@ -82,16 +82,16 @@ export async function generateMetadata({ params }) {
     const service = mapServiceResponse(response?.data?.service);
     if (!service) {
       return {
-        title: "Service not found | Ma3rood Services",
+        title: "Service not found | Haat Services",
       };
     }
     return {
-      title: `${service.title} | Ma3rood Services`,
+      title: `${service.title} | Haat Services`,
       description: service.subtitle || service.description,
     };
   } catch {
     return {
-      title: "Service not found | Ma3rood Services",
+      title: "Service not found | Haat Services",
     };
   }
 }

@@ -1,8 +1,8 @@
 import ServicesBookingsClient from "./ServicesBookingsClient";
 
 export const metadata = {
-  title: "Service bookings | Ma3rood",
-  description: "Manage the services you have booked on Ma3rood.",
+  title: "Service bookings | Haat",
+  description: "Manage the services you have booked on Haat.",
 };
 
 export default function Page() {

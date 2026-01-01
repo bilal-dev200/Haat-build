@@ -5,7 +5,7 @@
 
 // const TrustSafety = () => {
 //     const { t } = useTranslation();
-  
+
 //   const items = [
 //     {
 //       icon: <FaUserCheck size={32} className="text-blue-600 mx-auto" />,
@@ -15,7 +15,7 @@
 //     {
 //       icon: <FaComments size={32} className="text-green-600 mx-auto" />,
 //       title: "Secure Chat",
-//       desc: "Keep all communication inside Ma3rood.",
+//       desc: "Keep all communication inside Haat.",
 //     },
 //     {
 //       icon: <FaBan size={32} className="text-red-600 mx-auto" />,
@@ -82,7 +82,7 @@ const TrustSafety = () => {
     {
       icon: <FaComments size={32} className="text-green-600 mx-auto" />,
       title: t("Secure Chat"),
-      desc: t("Keep all communication inside Ma3rood."),
+      desc: t("Keep all communication inside Haat."),
     },
     {
       icon: <FaBan size={32} className="text-red-600 mx-auto" />,

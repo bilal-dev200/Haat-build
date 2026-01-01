@@ -154,7 +154,7 @@
 //           />
 //     <div className="min-h-screen text-gray-800 px-4 py-6">
 //       {/* <div className="text-sm text-gray-600 mb-2">
-//         Home / My Ma3rood / Buy / <span className="text-black">Lost</span>
+//         Home / My Haat / Buy / <span className="text-black">Lost</span>
 //       </div> */}
 
 //       <h1 className="text-2xl font-bold text-green-600 uppercase mb-1">Lost</h1>
@@ -240,10 +240,10 @@
 import LostClient from './LostClient';
 
 export const metadata = {
-  title: "Lost   | Ma3rood",
+  title: "Lost   | Haat",
   description:
- "View and manage all the offers you've received on your listings.",
-   robots: "index, follow",
+    "View and manage all the offers you've received on your listings.",
+  robots: "index, follow",
 };
 
 export default function Page() {

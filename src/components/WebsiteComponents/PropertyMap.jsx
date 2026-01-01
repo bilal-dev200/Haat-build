@@ -49,7 +49,7 @@ const PropertyMap = ({
                 "data:image/svg+xml;charset=UTF-8," +
                 encodeURIComponent(`
         <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-          <path fill="##175F48" stroke="#ffffff" stroke-width="3" d="M24 3C15.163 3 8 10.163 8 19c0 8.837 16 26 16 26s16-17.163 16-26c0-8.837-7.163-16-16-16zm0 22a6 6 0 1 1 0-12 6 6 0 0 1 0 12z"/>
+          <path fill="##05A650" stroke="#ffffff" stroke-width="3" d="M24 3C15.163 3 8 10.163 8 19c0 8.837 16 26 16 26s16-17.163 16-26c0-8.837-7.163-16-16-16zm0 22a6 6 0 1 1 0-12 6 6 0 0 1 0 12z"/>
         </svg>
       `),
               scaledSize: new window.google.maps.Size(40, 40),
@@ -84,15 +84,12 @@ const PropertyMap = ({
               const infoWindow = new window.google.maps.InfoWindow({
                 content: `
                   <div class="p-2">
-                    <h3 class="font-semibold text-sm">${
-                      property.title || "Property"
-                    }</h3>
-                    <p class="text-xs text-gray-600">${
-                      property.price || "Price not available"
-                    }</p>
-                    <p class="text-xs text-gray-500">${
-                      property.address || ""
-                    }</p>
+                    <h3 class="font-semibold text-sm">${property.title || "Property"
+                  }</h3>
+                    <p class="text-xs text-gray-600">${property.price || "Price not available"
+                  }</p>
+                    <p class="text-xs text-gray-500">${property.address || ""
+                  }</p>
                   </div>
                 `,
               });
@@ -193,9 +190,8 @@ const PropertyMap = ({
             <div class="p-2">
               <h3 class="font-semibold text-sm">${place.name}</h3>
               <p class="text-xs text-gray-600">${place.vicinity || ""}</p>
-              <p class="text-xs text-gray-500">${
-                place.rating ? `Rating: ${place.rating}/5` : ""
-              }</p>
+              <p class="text-xs text-gray-500">${place.rating ? `Rating: ${place.rating}/5` : ""
+            }</p>
             </div>
           `,
         });
@@ -253,11 +249,10 @@ const PropertyMap = ({
                   <button
                     key={type}
                     onClick={() => togglePlaceType(type)}
-                    className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                      selectedPlaceType === type
+                    className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${selectedPlaceType === type
                         ? "bg-green-600 text-white"
                         : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                    }`}
+                      }`}
                   >
                     {type.replace("_", " ").toUpperCase()} ({places.length})
                   </button>

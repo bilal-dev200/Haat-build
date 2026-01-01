@@ -22,13 +22,13 @@ export default function CustomDropdown({ label, options, initialValue }) {
         aria-haspopup="true"
         aria-expanded={isOpen}
       >
-        
+
         <span>{selectedValue}</span>
-     <span
-    className={`text-xs ml-2 transition-transform duration-200 leading-none text-[#175f48] ${isOpen ? "rotate-180" : ""}`}
-  >
-    ▼
-  </span>
+        <span
+          className={`text-xs ml-2 transition-transform duration-200 leading-none text-[#05A650] ${isOpen ? "rotate-180" : ""}`}
+        >
+          ▼
+        </span>
       </button>
       {isOpen && (
         <div className="absolute z-20 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-auto">

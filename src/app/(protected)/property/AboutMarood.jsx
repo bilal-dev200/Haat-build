@@ -1,10 +1,10 @@
 import React from "react";
 
-const AboutMa3rood = () => {
+const AboutHaat = () => {
   return (
     <div className="mt-10">
       <h2 className="text-xl font-semibold mb-6 border-b-2 border-gray-400 pb-2 inline-block">
-        About Ma3rood
+        About Haat
       </h2>
       <p className="text-gray-700 leading-relaxed mb-6 text-sm">
         It is a long established fact that a reader will be distracted by the readable content of a page when looking at its
@@ -58,5 +58,5 @@ const AboutMa3rood = () => {
   );
 };
 
-export default AboutMa3rood;
+export default AboutHaat;
 

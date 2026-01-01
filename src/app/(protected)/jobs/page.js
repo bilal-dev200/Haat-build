@@ -7,15 +7,15 @@ import {
 
 
 export const metadata = {
-  title: "Latest Jobs & Career Opportunities in Saudi Arabia | Ma3rood Jobs",
+  title: "Latest Jobs & Career Opportunities in Saudi Arabia | Haat Jobs",
   description:
-    "Explore thousands of the latest job vacancies in Saudi Arabia. Find full-time, part-time, and remote career opportunities across major industries with Ma3rood.",
+    "Explore thousands of the latest job vacancies in Saudi Arabia. Find full-time, part-time, and remote career opportunities across major industries with Haat.",
 };
 
-export default async function page () {
-    const [catResult, 
-      listings
-    ] = await Promise.all([
+export default async function page() {
+  const [catResult,
+    listings
+  ] = await Promise.all([
     fetchAllJobCategories(),
     fetchAllListingsByFilter(),
   ]);
@@ -24,10 +24,10 @@ export default async function page () {
 
   return (
     <div className="bg-white min-h-screen">
-      
-      <JobsClient 
-      category={catResult?.categories?.data || []}
-            initialProducts={listings?.data || []}
+
+      <JobsClient
+        category={catResult?.categories?.data || []}
+        initialProducts={listings?.data || []}
       />
     </div>
   );

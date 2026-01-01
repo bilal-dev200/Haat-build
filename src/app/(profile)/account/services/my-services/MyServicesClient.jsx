@@ -28,8 +28,8 @@ export default function MyServicesClient() {
       const results = Array.isArray(response?.data?.data)
         ? response.data.data
         : Array.isArray(response?.data)
-        ? response.data
-        : [];
+          ? response.data
+          : [];
       setServices(results);
       setPagination({
         page: response?.data?.current_page || page,
@@ -104,7 +104,7 @@ export default function MyServicesClient() {
             You haven't created any services yet
           </h2>
           <p className="mt-2 text-sm text-slate-600">
-            Start offering your services to customers on Ma3rood.
+            Start offering your services to customers on Haat.
           </p>
           <Link
             href="/listing"

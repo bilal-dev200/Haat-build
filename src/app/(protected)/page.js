@@ -47,20 +47,20 @@ import Watch from "@/components/WebsiteComponents/HomePageComponents/Watch";
 // ];
 
 export const metadata = {
-  title: "Ma3rood",
+  title: "Haat",
   description:
     "Browse and discover the best deals on MA3rood Marketplace. Find products, categories, and more.",
   // openGraph: {
-  //   title: "Marketplace | Ma3rood",
-  //   description: "Browse and discover the best deals on Ma3rood Marketplace. Find products, categories, and more.",
+  //   title: "Marketplace | Haat",
+  //   description: "Browse and discover the best deals on Haat Marketplace. Find products, categories, and more.",
   //   url: "https://yourdomain.com/marketplace", // to be replaced with the actual domain
-  //   siteName: "Ma3rood",
+  //   siteName: "Haat",
   //   images: [
   //     {
   //       url: "https://yourdomain.com/og-marketplace.jpg",
   //       width: 1200,
   //       height: 630,
-  //       alt: "Marketplace | Ma3rood",
+  //       alt: "Marketplace | Haat",
   //     },
   //   ],
   //   locale: "en_US",

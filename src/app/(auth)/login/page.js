@@ -84,7 +84,7 @@
 //       </div>
 
 //       {/* RIGHT: Blue Section (hidden on small screens) */}
-//       <div className="hidden md:flex w-[40%] bg-[#175f48] text-white flex-col justify-between px-8 py-12">
+//       <div className="hidden md:flex w-[40%] bg-[#05A650] text-white flex-col justify-between px-8 py-12">
 //         <div className="mx-auto text-center">
 //           <h2>{t("Let’s Pick Up Where You Left Off")}</h2>
 
@@ -138,7 +138,7 @@ function LoginPageContent() {
   const router = useRouter();
   const { t } = useTranslation();
   const searchParams = useSearchParams();
-const callbackUrl = searchParams.get("callbackUrl");
+  const callbackUrl = searchParams.get("callbackUrl");
 
   // useEffect(() => {
   //   const token = localStorage.getItem("token");
@@ -166,10 +166,10 @@ const callbackUrl = searchParams.get("callbackUrl");
       console.log("Res", res);
       "Login response:", res;
       if (res.success && res.user) {
-      router.replace(callbackUrl || "/");
-      return;
-    }
-     if (res.error == "Emails is not verified yet" && res.email) {
+        router.replace(callbackUrl || "/");
+        return;
+      }
+      if (res.error == "Emails is not verified yet" && res.email) {
         router.push(`/verification?email=${encodeURIComponent(res.email)}`);
       }
     } catch (err) {
@@ -180,20 +180,20 @@ const callbackUrl = searchParams.get("callbackUrl");
   return (
     <div className="flex flex-col md:flex-row w-full h-screen">
       {/* Language Switcher */}
-      <div>
+      {/* <div>
         <LanguageSwitcher
           className="absolute top-4 left-2"
           buttonClassName="bg-green-600 text-green"
         />
-      </div>
+      </div> */}
 
       {/* LEFT: Form Section */}
       <div className="w-full md:w-[60%] flex flex-col justify-center items-center px-4 py-8 bg-white min-h-screen md:min-h-full">
         <div className="flex justify-center mb-6">
           <Link href="/">
             <Image
-              src="/Ma3rood-logo-green.png"
-              alt="Ma3rood Logo"
+              src="/haat-logo.png"
+              alt="Haat Logo"
               width={180}
               height={60}
               priority
@@ -207,8 +207,8 @@ const callbackUrl = searchParams.get("callbackUrl");
           {/* <div className="flex justify-center mt-6 mb-6">
   <Link href="/">
     <Image
-      src="/Ma3rood-logo-green.png"
-      alt="Ma3rood Logo"
+      src="/haat-logo.png"
+      alt="Haat Logo"
       width={180}
       height={60}
       priority
@@ -262,7 +262,7 @@ const callbackUrl = searchParams.get("callbackUrl");
       </div>
 
       {/* RIGHT: Info Section */}
-      <div className="hidden md:flex w-[40%] bg-[#175f48] text-white flex-col justify-between px-8 py-12">
+      <div className="hidden md:flex w-[40%] bg-[#05A650] text-white flex-col justify-between px-8 py-12">
         <div className="mx-auto text-center">
           {/* <h2>{t("Let’s Pick Up Where You Left Off")}</h2> */}
           <p>

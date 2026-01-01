@@ -8,7 +8,7 @@ export default function HeroSection({ categories = [], popularTags = [] }) {
     <section
       className=" overflow-hidden rounded-b-[64px] bg-slate-900 text-white"
       style={{
-        background: "#175f48",
+        background: "#05A650",
         // background:
         //   "radial-gradient(circle at top left, #4aa6ff 0%, #1f4e96 55%, #0f1e3a 100%)",
       }}

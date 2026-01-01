@@ -61,7 +61,7 @@ const Sale = () => {
                   <option key={i}>{opt}</option>
                 ))}
               </select>
-              <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#175f48] pointer-events-none">
+              <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#05A650] pointer-events-none">
                 ▼
               </span>
             </div>
@@ -70,7 +70,7 @@ const Sale = () => {
 
         {/* Search Button */}
         <div className="flex items-end">
-          <button className="w-full bg-[#175f48] text-white py-2 rounded-md">
+          <button className="w-full bg-[#05A650] text-white py-2 rounded-md">
             Search
           </button>
         </div>
@@ -89,7 +89,7 @@ const Sale = () => {
                 <option key={i}>{opt}</option>
               ))}
             </select>
-            <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-[#175f48] pointer-events-none">
+            <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-[#05A650] pointer-events-none">
               ▼
             </span>
           </div>
@@ -104,7 +104,7 @@ const Sale = () => {
               <option key={i}>{opt}</option>
             ))}
           </select>
-          <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-[#175f48] pointer-events-none">
+          <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-[#05A650] pointer-events-none">
             ▼
           </span>
         </div>
@@ -120,7 +120,7 @@ const Sale = () => {
                 <option key={i}>{opt}</option>
               ))}
             </select>
-            <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-[#175f48] pointer-events-none">
+            <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-[#05A650] pointer-events-none">
               ▼
             </span>
           </div>
@@ -139,7 +139,7 @@ const Sale = () => {
                 <option key={i}>{opt}</option>
               ))}
             </select>
-            <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-[#175f48] pointer-events-none">
+            <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-[#05A650] pointer-events-none">
               ▼
             </span>
           </div>
@@ -156,7 +156,7 @@ const Sale = () => {
                 <option key={i}>{opt}</option>
               ))}
             </select>
-            <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#175f48] pointer-events-none">
+            <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#05A650] pointer-events-none">
               ▼
             </span>
           </div>
@@ -201,10 +201,10 @@ const Sale = () => {
 
           <div className="text-sm text-gray-600 flex items-center space-x-1 cursor-pointer">
             <span>More Options</span>
-            <span className="text-[#175f48]">▼</span>
+            <span className="text-[#05A650]">▼</span>
           </div>
 
-          <button className="border border-[#175f48] text-[#175f48] px-4 py-2 rounded-md hover:bg-green-50">
+          <button className="border border-[#05A650] text-[#05A650] px-4 py-2 rounded-md hover:bg-green-50">
             Advanced Search
           </button>
         </div>

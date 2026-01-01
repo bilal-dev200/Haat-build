@@ -59,8 +59,8 @@ const JobApplicationModal = ({ isOpen, onClose, jobId }) => {
   };
 
   const validateCvFile = (file) => {
-  return file && file.type === "application/pdf";
-};
+    return file && file.type === "application/pdf";
+  };
 
   const handleNewCvUpload = (e) => {
     setErrors({});
@@ -95,7 +95,7 @@ const JobApplicationModal = ({ isOpen, onClose, jobId }) => {
       if (cvChoice === "new") data.append("cv", newCvFile);
       else data.append("cv_id", formData.cv_id);
 
-      const res= await profilePostApi("user/job-applying/store", data, {
+      const res = await profilePostApi("user/job-applying/store", data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
@@ -107,23 +107,23 @@ const JobApplicationModal = ({ isOpen, onClose, jobId }) => {
       onClose();
     } catch (error) {
       console.error("Application Error:", error);
-        const msg = error.data.message || "Something went wrong.";
-        setErrors(msg);
-        // console.log("Validation Errors:", msg);
-        // // Show top-level error in toast too
-        // toast.error("Please fix the highlighted fields.");
-         // ✅ Extract error message safely
-  // const msg = error?.response?.data?.message || error?.message || "Something went wrong.";
+      const msg = error.data.message || "Something went wrong.";
+      setErrors(msg);
+      // console.log("Validation Errors:", msg);
+      // // Show top-level error in toast too
+      // toast.error("Please fix the highlighted fields.");
+      // ✅ Extract error message safely
+      // const msg = error?.response?.data?.message || error?.message || "Something went wrong.";
 
-  // ✅ If it's an object of validation errors
-  if (typeof msg === "object") {
-    setErrors(msg);
-    toast.error("Please fix the highlighted fields.");
-  } else {
-    // ✅ If it's a single error message from backend
-    setErrors({ general: msg });
-    toast.error(msg);
-  }
+      // ✅ If it's an object of validation errors
+      if (typeof msg === "object") {
+        setErrors(msg);
+        toast.error("Please fix the highlighted fields.");
+      } else {
+        // ✅ If it's a single error message from backend
+        setErrors({ general: msg });
+        toast.error(msg);
+      }
     } finally {
       setLoading(false);
     }
@@ -137,7 +137,7 @@ const JobApplicationModal = ({ isOpen, onClose, jobId }) => {
         {/* Header */}
         <div className="flex justify-between items-center border-b pb-3 mb-5">
           <h2 className="text-lg font-semibold flex items-center gap-2 text-gray-900">
-            <FileText className="w-5 h-5 text-[#175f48]" />
+            <FileText className="w-5 h-5 text-[#05A650]" />
             Apply for this Job
           </h2>
           <button
@@ -163,7 +163,7 @@ const JobApplicationModal = ({ isOpen, onClose, jobId }) => {
                 value={formData.full_name}
                 onChange={handleChange}
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-[#175f48]"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-[#05A650]"
               />
               {errors?.full_name && (
                 <p className="text-red-500 text-xs mt-1">{errors.full_name[0]}</p>
@@ -181,7 +181,7 @@ const JobApplicationModal = ({ isOpen, onClose, jobId }) => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-[#175f48]"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-[#05A650]"
               />
               {errors?.email && (
                 <p className="text-red-500 text-xs mt-1">{errors.email[0]}</p>
@@ -199,7 +199,7 @@ const JobApplicationModal = ({ isOpen, onClose, jobId }) => {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-[#175f48]"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-[#05A650]"
               />
               {errors?.phone && (
                 <p className="text-red-500 text-xs mt-1">{errors.phone[0]}</p>
@@ -216,7 +216,7 @@ const JobApplicationModal = ({ isOpen, onClose, jobId }) => {
                 accept=".pdf,.doc,.docx"
                 onChange={handleCoverChange}
                 required
-                className="w-full text-sm border border-gray-300 rounded-md px-2 py-2 cursor-pointer focus:ring-1 focus:ring-[#175f48]"
+                className="w-full text-sm border border-gray-300 rounded-md px-2 py-2 cursor-pointer focus:ring-1 focus:ring-[#05A650]"
               />
               {coverFile && (
                 <p className="text-xs text-gray-500 mt-1 truncate">
@@ -264,7 +264,7 @@ const JobApplicationModal = ({ isOpen, onClose, jobId }) => {
                   name="cv_id"
                   value={formData.cv_id}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white focus:ring-1 focus:ring-[#175f48]"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white focus:ring-1 focus:ring-[#05A650]"
                 >
                   <option value="">Select your CV</option>
                   {cvs.length > 0 ? (
@@ -287,7 +287,7 @@ const JobApplicationModal = ({ isOpen, onClose, jobId }) => {
                   type="file"
                   accept=".pdf"
                   onChange={handleNewCvUpload}
-                  className="w-full text-sm border border-gray-300 rounded-md px-2 py-2 cursor-pointer focus:ring-1 focus:ring-[#175f48]"
+                  className="w-full text-sm border border-gray-300 rounded-md px-2 py-2 cursor-pointer focus:ring-1 focus:ring-[#05A650]"
                 />
                 {newCvFile && (
                   <p className="text-xs text-gray-500 mt-1 truncate">
@@ -305,11 +305,10 @@ const JobApplicationModal = ({ isOpen, onClose, jobId }) => {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full py-2.5 mt-3 rounded-lg text-white font-medium transition-all duration-150 ${
-              loading
+            className={`w-full py-2.5 mt-3 rounded-lg text-white font-medium transition-all duration-150 ${loading
                 ? "bg-gray-400 cursor-not-allowed"
-                : "bg-[#175f48] hover:bg-[#147c59]"
-            }`}
+                : "bg-[#05A650] hover:bg-[#147c59]"
+              }`}
           >
             {loading ? "Submitting..." : "Submit Application"}
           </button>

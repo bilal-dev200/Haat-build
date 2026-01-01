@@ -133,9 +133,9 @@ const steps = [
 ];
 
 const topCategories = [
-  { name: "Ma3rood Motors", color: "text-green-600" },
-  { name: "Ma3rood Property", color: "text-green-600" },
-  { name: "Ma3rood Jobs", color: "text-orange-600", external: true },
+  { name: "Haat Motors", color: "text-green-600" },
+  { name: "Haat Property", color: "text-green-600" },
+  { name: "Haat Jobs", color: "text-orange-600", external: true },
 ];
 
 const Page = () => {
@@ -182,15 +182,15 @@ const Page = () => {
     }
   };
 
-const handleListingTypeSelect = (type) => {
-  if (type === "property_type") {
-    setListingType("property_type"); 
-    setShowListingTypeSelection(false);
-  } else {
-    setListingType(type);
-    setShowListingTypeSelection(false);
-  }
-};
+  const handleListingTypeSelect = (type) => {
+    if (type === "property_type") {
+      setListingType("property_type");
+      setShowListingTypeSelection(false);
+    } else {
+      setListingType(type);
+      setShowListingTypeSelection(false);
+    }
+  };
 
   useEffect(() => {
     if (listingType !== "service") return;
@@ -236,7 +236,7 @@ const handleListingTypeSelect = (type) => {
     setShowListingTypeSelection(true);
   };
 
-  
+
 
   if (showListingTypeSelection) {
     return (
@@ -252,7 +252,7 @@ const handleListingTypeSelect = (type) => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            
+
             <div
               className="bg-white rounded-xl shadow-lg p-8 border-2 border-transparent hover:border-green-500 transition-all duration-300 cursor-pointer group"
               onClick={() => handleListingTypeSelect("general")}
@@ -320,25 +320,25 @@ const handleListingTypeSelect = (type) => {
             </div>
 
             {/* Job Option */}
-<div
-  className="bg-white rounded-xl shadow-lg p-8 border-2 border-transparent hover:border-green-500 transition-all duration-300 cursor-pointer group"
-  onClick={() => handleListingTypeSelect("job")}
->
-  <div className="text-center">
-    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors">
-      <Briefcase className="w-10 h-10 text-green-600" />
-    </div>
-    <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-      Jobs
-    </h3>
-    <p className="text-gray-600 mb-6">
-      Post full-time, part-time, freelance, or remote job listings
-    </p>
-    <div className="text-sm text-gray-500">
-      Ideal for employers, recruiters, and companies — add job title, salary range, work type, and qualifications to attract top talent.
-    </div>
-  </div>
-</div>
+            <div
+              className="bg-white rounded-xl shadow-lg p-8 border-2 border-transparent hover:border-green-500 transition-all duration-300 cursor-pointer group"
+              onClick={() => handleListingTypeSelect("job")}
+            >
+              <div className="text-center">
+                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors">
+                  <Briefcase className="w-10 h-10 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                  Jobs
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  Post full-time, part-time, freelance, or remote job listings
+                </p>
+                <div className="text-sm text-gray-500">
+                  Ideal for employers, recruiters, and companies — add job title, salary range, work type, and qualifications to attract top talent.
+                </div>
+              </div>
+            </div>
 
             <div
               className="bg-white rounded-xl shadow-lg p-8 border-2 border-transparent hover:border-green-500 transition-all duration-300 cursor-pointer group"
@@ -386,7 +386,7 @@ const handleListingTypeSelect = (type) => {
               Back to listing type selection
             </button>
           </div>
-          <MotorListingForm mode="create"/>
+          <MotorListingForm mode="create" />
         </div>
       </div>
     );
@@ -405,7 +405,7 @@ const handleListingTypeSelect = (type) => {
               Back to listing type selection
             </button>
           </div>
-          <Properties/>
+          <Properties />
 
           {/* <PropertyListingForm onSubmit={handleCreateListing} /> */}
         </div>
@@ -441,7 +441,7 @@ const handleListingTypeSelect = (type) => {
     );
   }
 
-    if (listingType === "job") {
+  if (listingType === "job") {
     return (
       <div className="min-h-screen bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 py-8">

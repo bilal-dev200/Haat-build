@@ -54,7 +54,7 @@ function ForgotPasswordContent() {
       console.error("Forgot Password Error:", err);
       setError(
         err.response?.data?.message ||
-          "Something went wrong. Please try again."
+        "Something went wrong. Please try again."
       );
     } finally {
       setIsLoading(false);
@@ -64,20 +64,20 @@ function ForgotPasswordContent() {
   return (
     <div className="flex flex-col md:flex-row w-full h-screen">
       {/* Language Switcher */}
-      <div>
+      {/* <div>
         <LanguageSwitcher
           className="absolute top-4 left-2"
           buttonClassName="bg-green-600 text-green"
         />
-      </div>
+      </div> */}
 
       {/* LEFT: Form Section */}
       <div className="w-full md:w-[60%] flex flex-col justify-center items-center px-4 py-8 bg-white min-h-screen md:min-h-full">
         <div className="flex justify-center mb-6">
           <Link href="/">
             <Image
-              src="/Ma3rood-logo-green.png"
-              alt="Ma3rood Logo"
+              src="/haat-logo.png"
+              alt="Haat Logo"
               width={180}
               height={60}
               priority
@@ -158,11 +158,10 @@ function ForgotPasswordContent() {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className={`w-full py-2 px-4 cursor-pointer border border-transparent rounded-md shadow-sm text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 ${
-                    isLoading
-                      ? "bg-green-400 cursor-not-allowed"
-                      : "bg-green-600 hover:bg-green-700"
-                  }`}
+                  className={`w-full py-2 px-4 cursor-pointer border border-transparent rounded-md shadow-sm text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 ${isLoading
+                    ? "bg-green-400 cursor-not-allowed"
+                    : "bg-green-600 hover:bg-green-700"
+                    }`}
                 >
                   {isLoading ? (
                     <span className="flex items-center justify-center">
@@ -205,7 +204,7 @@ function ForgotPasswordContent() {
       </div>
 
       {/* RIGHT: Info Section */}
-      <div className="hidden md:flex w-[40%] bg-[#175f48] text-white flex-col justify-between px-8 py-12">
+      <div className="hidden md:flex w-[40%] bg-[#05A650] text-white flex-col justify-between px-8 py-12">
         <div className="mx-auto text-center">
           <p>
             {t(

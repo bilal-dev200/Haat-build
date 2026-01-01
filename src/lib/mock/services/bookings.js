@@ -9,7 +9,7 @@ const CURRENT_USER = {
 
 const CURRENT_PROVIDER = {
   id: "user-0001",
-  name: "Ma3rood Services",
+  name: "Haat Services",
   email: "support@ma3rood.com",
   phone: "+966511111111",
 };
@@ -107,12 +107,12 @@ async function buildSeedBooking({
     activity: activity.length
       ? activity
       : [
-          createTimelineEntry({
-            type: "booking_created",
-            actor: "buyer",
-            message: `${buyer.name} booked ${service?.title || "the service"}.`,
-          }),
-        ],
+        createTimelineEntry({
+          type: "booking_created",
+          actor: "buyer",
+          message: `${buyer.name} booked ${service?.title || "the service"}.`,
+        }),
+      ],
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   };
@@ -230,9 +230,8 @@ export const mockServiceBookingsApi = {
         createTimelineEntry({
           type: "booking_created",
           actor: "buyer",
-          message: `${payload.fullName || "Buyer"} requested ${
-            service?.title || "this service"
-          }.`,
+          message: `${payload.fullName || "Buyer"} requested ${service?.title || "this service"
+            }.`,
         }),
       ],
       createdAt: new Date().toISOString(),
@@ -246,7 +245,7 @@ export const mockServiceBookingsApi = {
   async listBuyerBookings() {
     await ensureSeeded();
     const bookings = serviceBookings.filter(
-    (booking) => booking.buyer.id === CURRENT_USER.id
+      (booking) => booking.buyer.id === CURRENT_USER.id
     );
     return clone(bookings);
   },

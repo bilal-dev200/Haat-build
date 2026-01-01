@@ -4,8 +4,8 @@ import { Suspense } from "react";
 import Breadcrumbs from "@/components/WebsiteComponents/ReuseableComponenets/Breadcrumbs";
 
 export const metadata = {
-  title: "Creator Listings | Ma3rood",
-  description: "Browse listings from this creator on Ma3rood Marketplace.",
+  title: "Creator Listings | Haat",
+  description: "Browse listings from this creator on Haat Marketplace.",
   robots: "index, follow",
 };
 
@@ -54,7 +54,7 @@ export default async function CreatorListingsPage({ searchParams }) {
     console.log("api-result", result);
 
     listings = result || { data: { data: [] } };
-    
+
     // Extract creator info from first listing if available
     if (listings?.data?.data?.length > 0) {
       creatorInfo = listings.data.data[0]?.creator;

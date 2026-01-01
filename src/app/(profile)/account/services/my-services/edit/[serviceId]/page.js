@@ -1,8 +1,8 @@
 import EditServiceForm from "./EditServiceForm";
 
 export const metadata = {
-  title: "Edit Service | Ma3rood",
-  description: "Edit your service listing on Ma3rood.",
+  title: "Edit Service | Haat",
+  description: "Edit your service listing on Haat.",
 };
 
 export default async function Page({ params }) {

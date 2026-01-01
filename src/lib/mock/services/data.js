@@ -510,7 +510,7 @@ export function getPopularTags(limit = 12) {
 }
 
 export const SERVICES_MODULE_METADATA = {
-  title: "Compare Trusted Services Across New Zealand | Ma3rood Services",
+  title: "Compare Trusted Services Across New Zealand | Haat Services",
   description:
     "Book trusted tradies, event pros, tutors, and wellness experts. Browse verified reviews, compare quotes, and manage service requests in one place.",
 };

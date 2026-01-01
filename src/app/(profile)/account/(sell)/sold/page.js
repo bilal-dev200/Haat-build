@@ -255,10 +255,10 @@ import SoldClients from "./SoldClients";
 
 
 export const metadata = {
-  title: "Sold Products | Ma3rood",
+  title: "Sold Products | Haat",
   description:
- "View and manage all the offers you've received on your listings.",
-   robots: "index, follow",
+    "View and manage all the offers you've received on your listings.",
+  robots: "index, follow",
 };
 
 export default function Page() {
