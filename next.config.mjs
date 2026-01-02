@@ -37,6 +37,11 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "haat.datainovate.com",
+        pathname: "/backend/storage/**",
+      },
+      {
+        protocol: "https",
         hostname: "encrypted-tbn0.gstatic.com",
         pathname: "/**",
       },
