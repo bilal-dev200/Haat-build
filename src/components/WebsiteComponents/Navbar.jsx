@@ -88,16 +88,15 @@ const Navbar = () => {
           )}
 
 
-          <div className="hidden sm:flex items-center gap-2 hover:text-green-500">
+          {/* <div className="hidden sm:flex items-center gap-2 hover:text-green-500">
             <FaPhone className="text-lg" />
-            {/* <span>+966 53 646 5526</span> */}
             <a href="tel:+966536465526">
               <span className="">
                 {" "}
                 {t("+966 53 646 5526")}{" "}
               </span>
             </a>
-          </div>
+          </div> */}
           <GoogleTranslate />
         </div>
 

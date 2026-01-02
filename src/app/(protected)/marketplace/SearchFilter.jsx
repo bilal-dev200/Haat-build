@@ -219,7 +219,7 @@ export const SearchFilter = () => {
                 <div>
                   <p className="text-sm text-black font-medium">{item.title}</p>
                   <p className="text-xs text-black">
-                    <span className="price">$</span>
+                    <span className="price">৳</span>
                     {item.start_price}
                   </p>
                 </div>

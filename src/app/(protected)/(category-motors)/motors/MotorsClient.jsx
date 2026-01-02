@@ -693,7 +693,7 @@ const MotorsClient = ({ category, initialProducts, pagination }) => {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     {t("Price Range")}
-                    {/* <span className="price">$</span> */}
+                    {/* <span className="price">৳</span> */}
                   </label>
                   <div className="grid grid-cols-2 gap-2">
                     <select

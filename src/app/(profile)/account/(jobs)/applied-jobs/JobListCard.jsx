@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 function OffersModal({ offers = [], open, onClose, onAccept, onDecline }) {
   if (!open) return null;
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
@@ -35,7 +35,7 @@ function OffersModal({ offers = [], open, onClose, onAccept, onDecline }) {
               >
                 <div className="flex-1">
                   <div className="text-lg font-bold text-gray-900 mb-1">
-                    <span className="price">$</span>
+                    <span className="price">৳</span>
                     {offer.amount}
                   </div>
                   <div className="text-xs text-gray-500 mb-1">
@@ -50,12 +50,12 @@ function OffersModal({ offers = [], open, onClose, onAccept, onDecline }) {
                         const seconds = Math.floor((diffMs / 1000) % 60);
                         return expiresAt
                           ? `Expires in ${hours
-                              .toString()
-                              .padStart(2, "0")}:${minutes
+                            .toString()
+                            .padStart(2, "0")}:${minutes
                               .toString()
                               .padStart(2, "0")}:${seconds
-                              .toString()
-                              .padStart(2, "0")}`
+                                .toString()
+                                .padStart(2, "0")}`
                           : "Expires in: -";
                       }
                       return getTimeLeft(offer.expires_at);
@@ -66,7 +66,7 @@ function OffersModal({ offers = [], open, onClose, onAccept, onDecline }) {
                       {t("User")}: {offer.user?.name}
                     </span>
                     <span className="text-xs text-orange-500">
-                     {t("Message")}: {offer.message}
+                      {t("Message")}: {offer.message}
                     </span>
                   </div>
                 </div>
@@ -76,7 +76,7 @@ function OffersModal({ offers = [], open, onClose, onAccept, onDecline }) {
                       className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
                       onClick={() => onAccept(offer)}
                     >
- {t("Accept offer")}                    </button>
+                      {t("Accept offer")}                    </button>
                     <button
                       className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition"
                       onClick={() => onDecline(offer)}
@@ -109,7 +109,7 @@ function AcceptBidModal({
   onReject,
 }) {
   if (!open) return null;
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
       <div className="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative">
@@ -123,12 +123,12 @@ function AcceptBidModal({
         <h2 className="text-xl font-bold mb-4">{t("Highest Bid")}</h2>
         <div className="mb-4 text-gray-700">
           <p className="mb-2">
-            The reserve price (<span className="price">$</span>{reservePrice}){t("was")}{" "}
+            The reserve price (<span className="price">৳</span>{reservePrice}){t("was")}{" "}
             <span className="font-bold text-red-600">{t("not met")}</span>.
           </p>
           <p className="mb-2">
-            {t("The highest bid is")} <span className="font-bold"><span className="price">$</span>{bid?.amount}</span>{" "}
-           {t("by")}{" "}
+            {t("The highest bid is")} <span className="font-bold"><span className="price">৳</span>{bid?.amount}</span>{" "}
+            {t("by")}{" "}
             <span className="font-semibold">
               {bid?.user?.username || "Unknown"}
             </span>
@@ -137,7 +137,7 @@ function AcceptBidModal({
           {/* <p className="mb-2">
             The highest bid is{" "}
             <span className="font-bold">
-              <span className="price">$</span>
+              <span className="price">৳</span>
               {bid?.amount}
             </span>{" "}
             by{" "}
@@ -230,14 +230,14 @@ export default function JobListCard({ listing, actions }) {
               {listing.title}
             </p>
             <p className="text-xs text-gray-500 mb-1">
-             {t("Company:")} {listing.company}
+              {t("Company:")} {listing.company}
             </p>
             <p className="text-xs text-gray-500 mb-1">
-             {t("Description:")}  {listing.short_summary
-    ? listing.short_summary.length > 250
-      ? `${listing.short_summary.slice(0, 250)}...`
-      : listing.short_summary
-    : ""}
+              {t("Description:")}  {listing.short_summary
+                ? listing.short_summary.length > 250
+                  ? `${listing.short_summary.slice(0, 250)}...`
+                  : listing.short_summary
+                : ""}
             </p>
           </div>
         </div>
@@ -252,7 +252,7 @@ export default function JobListCard({ listing, actions }) {
         {/* <div className="text-right sm:text-left mt-2 sm:mt-0">
           <span className="text-xs text-gray-500 block">{t("Minimum Pay Amount")}</span>
           <span className="font-semibold text-gray-800 text-base">
-            <span className="price">$</span>
+            <span className="price">৳</span>
             <span className="ml-1">{listing.price}</span>
           </span>
         </div> */}

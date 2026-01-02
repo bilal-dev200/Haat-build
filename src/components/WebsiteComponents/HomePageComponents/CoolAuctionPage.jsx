@@ -95,7 +95,7 @@
 // //                         Buy Now:
 // //                       </div>
 // //                       <div className="font-bold">
-// //                         <span className="price">$</span>
+// //                         <span className="price">৳</span>
 // //                         {item.listing.buy_now_price}
 // //                       </div>
 // //                     </div>
@@ -214,7 +214,7 @@
 // //                         Buy Now:
 // //                       </div>
 // //                       <div className="font-bold">
-// //                         <span className="price">$</span>
+// //                         <span className="price">৳</span>
 // //                         {item.listing.buy_now_price}
 // //                       </div>
 // //                     </div>
@@ -333,7 +333,7 @@
 //                         Buy Now:
 //                       </div>
 //                       <div className="font-bold">
-//                         <span className="price">$</span>
+//                         <span className="price">৳</span>
 //                         {item.buy_now_price}
 //                       </div>
 //                     </div>
@@ -464,7 +464,7 @@ const CoolAuctionPage = ({
                         Buy Now:
                       </div>
                       <div className="font-bold">
-                        <span className="price">$</span>
+                        <span className="price">৳</span>
                         {item.buy_now_price}
                       </div>
                     </div>
@@ -532,18 +532,16 @@ const CoolAuctionPage = ({
                       <div className="font-bold text-xs">
                         {(item.creator?.regions?.name ||
                           item.creator?.billing_address) && (
-                          <>
-                            <div className="font-bold text-xs">
-                              {`${
-                                item?.creator?.address_1
-                                  ? `${item?.creator?.address_1}, `
-                                  : ""
-                              } ${item?.creator?.governorates?.name}, ${
-                                item?.creator?.regions?.name
-                              }`}
-                            </div>
-                          </>
-                        )}
+                            <>
+                              <div className="font-bold text-xs">
+                                {`${item?.creator?.address_1
+                                    ? `${item?.creator?.address_1}, `
+                                    : ""
+                                  } ${item?.creator?.governorates?.name}, ${item?.creator?.regions?.name
+                                  }`}
+                              </div>
+                            </>
+                          )}
                       </div>
                     </div>
 
@@ -553,35 +551,35 @@ const CoolAuctionPage = ({
                           Buy Now:
                         </div>
                         <div className="font-bold">
-                          <span className="price">$</span>
+                          <span className="price">৳</span>
                           {item.buy_now_price}
                         </div>
                       </div>
                     )} */}
                     {item.bids_count === 0
                       ? item.buy_now_price && (
-                          <div className="text-right text-gray-700 flex flex-col items-end">
-                            <div className="text-[9px] text-gray-400 uppercase tracking-wide">
-                              {t("Buy Now")}:
-                            </div>
-                            <div className="font-bold">
-                              <span className="price">$</span>
-                              {item.buy_now_price}
-                            </div>
+                        <div className="text-right text-gray-700 flex flex-col items-end">
+                          <div className="text-[9px] text-gray-400 uppercase tracking-wide">
+                            {t("Buy Now")}:
                           </div>
-                        )
+                          <div className="font-bold">
+                            <span className="price">৳</span>
+                            {item.buy_now_price}
+                          </div>
+                        </div>
+                      )
                       : item.bids_count &&
-                        item.bids?.length > 0 && (
-                          <div className="text-right text-gray-700 flex flex-col items-end">
-                            <div className="text-[9px] text-gray-400 uppercase tracking-wide">
-                              {t("Current Bid")}:
-                            </div>
-                            <div className="font-bold">
-                              <span className="price">$</span>
-                              {item.bids?.[0]?.amount}
-                            </div>
+                      item.bids?.length > 0 && (
+                        <div className="text-right text-gray-700 flex flex-col items-end">
+                          <div className="text-[9px] text-gray-400 uppercase tracking-wide">
+                            {t("Current Bid")}:
                           </div>
-                        )}
+                          <div className="font-bold">
+                            <span className="price">৳</span>
+                            {item.bids?.[0]?.amount}
+                          </div>
+                        </div>
+                      )}
                   </div>
                 </div>
               </Link>

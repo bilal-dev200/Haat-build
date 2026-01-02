@@ -144,7 +144,7 @@
 //                             {t("Buy Now")}:
 //                           </div>
 //                           <div className="font-bold">
-//                             <span className="price">$</span>
+//                             <span className="price">৳</span>
 //                             {card.buy_now_price}
 //                           </div>
 //                         </div>
@@ -364,7 +364,7 @@ const MarketplaceCard = ({
                         {t("Buy Now")}:
                       </div>
                       <div className="font-bold">
-                        <span className="price">$</span>
+                        <span className="price">৳</span>
                         {card.buy_now_price}
                       </div>
                     </div>
@@ -471,7 +471,7 @@ const MarketplaceCard = ({
                             {t("Buy Now")}:
                           </div>
                           <div className="font-bold">
-                            <span className="price">$</span>
+                            <span className="price">৳</span>
                             {card.buy_now_price}
                           </div>
                         </div>
@@ -483,7 +483,7 @@ const MarketplaceCard = ({
                             {t("Current Bid")}:
                           </div>
                           <div className="font-bold">
-                            <span className="price">$</span>
+                            <span className="price">৳</span>
                             {card.bids?.[0]?.amount}
                           </div>
                         </div>

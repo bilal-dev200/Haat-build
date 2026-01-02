@@ -100,7 +100,7 @@ const MarketplaceSingleCard = ({ card, className = "", viewMode = "grid" }) => {
                                             {t("Buy Now")}:
                                         </div>
                                         <div className="text-xl font-bold text-gray-900 flex items-center gap-0.5">
-                                            <span className="price">$</span>
+                                            <span className="price">৳</span>
                                             {card.buy_now_price}
                                         </div>
                                     </div>
@@ -111,7 +111,7 @@ const MarketplaceSingleCard = ({ card, className = "", viewMode = "grid" }) => {
                                         {t("Current Bid")}:
                                     </div>
                                     <div className="text-xl font-bold text-gray-900 flex items-center gap-0.5">
-                                        <span className="price">$</span>
+                                        <span className="price">৳</span>
                                         {card.bids?.[0]?.amount}
                                     </div>
                                 </div>
@@ -202,7 +202,7 @@ const MarketplaceSingleCard = ({ card, className = "", viewMode = "grid" }) => {
                                     {t("Buy Now")}:
                                 </div>
                                 <div className="font-bold">
-                                    <span className="price">$</span>
+                                    <span className="price">৳</span>
                                     {card.buy_now_price}
                                 </div>
                             </div>
@@ -213,7 +213,7 @@ const MarketplaceSingleCard = ({ card, className = "", viewMode = "grid" }) => {
                                 {t("Current Bid")}:
                             </div>
                             <div className="font-bold">
-                                <span className="price">$</span>
+                                <span className="price">৳</span>
                                 {card.bids?.[0]?.amount}
                             </div>
                         </div>

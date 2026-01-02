@@ -63,7 +63,7 @@ export default function SoldListingCard({ listingObj, listing, actions }) {
           <div className="flex sm:flex-col items-end justify-between w-full sm:w-auto mt-2 sm:mt-0 sm:ml-auto text-sm text-gray-600">
             <span className="text-xs text-gray-500">{t("Sold Now")}</span>
             <span className="font-semibold text-gray-800 text-base">
-              <span className="price">$</span>
+              <span className="price">৳</span>
               <span className="ml-1">
                 {listing.price || listingObj.winning_bid?.amount}
               </span>
@@ -74,9 +74,8 @@ export default function SoldListingCard({ listingObj, listing, actions }) {
 
       {/* Actions */}
       <div
-        className={`border-t rounded-b-md px-4 py-2 flex flex-col sm:flex-row items-center text-sm text-gray-600 gap-2 sm:gap-4 ${
-          actions.length === 1 ? "justify-center" : "justify-between"
-        }`}
+        className={`border-t rounded-b-md px-4 py-2 flex flex-col sm:flex-row items-center text-sm text-gray-600 gap-2 sm:gap-4 ${actions.length === 1 ? "justify-center" : "justify-between"
+          }`}
       >
         {actions.map((action, idx) =>
           action.href ? (

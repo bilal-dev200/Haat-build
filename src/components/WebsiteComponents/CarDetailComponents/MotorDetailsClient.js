@@ -80,7 +80,7 @@ function BidHistoryModal({ bids, open, onClose }) {
                         {bid.user?.name || "Unknown"}
                       </td>
                       <td className="py-2 px-3 border whitespace-nowrap">
-                        <span className="price">$</span>
+                        <span className="price">৳</span>
                         {Number(bid.amount)?.toLocaleString("en-US", {
                           minimumFractionDigits: 2,
                           maximumFractionDigits: 2,
@@ -153,7 +153,7 @@ function BuyNowModal({ isOpen, onClose, product, onBuyNow }) {
             {t("Are you sure you want to buy this item now for")}
           </p>
           <p className="text-2xl sm:text-3xl font-bold text-green-600 mb-1">
-            <span className="price">$</span>
+            <span className="price">৳</span>
             {product.buy_now_price}
           </p>
           <p className="text-sm sm:text-base text-gray-500 truncate">
@@ -803,7 +803,7 @@ export default function MotorDetailsClient({ product: initialProduct, feedbackPe
                         Buy Now
                       </span>
                       <span className="block text-4xl font-bold text-gray-900">
-                        <span className="price">$</span>
+                        <span className="price">৳</span>
                         {product.buy_now_price || product.buy_now_price === 0
                           ? product.buy_now_price
                           : "-"}
@@ -832,7 +832,7 @@ export default function MotorDetailsClient({ product: initialProduct, feedbackPe
                       {t("Current Bid")}
                     </p>
                     <p className="text-4xl font-bold text-gray-900">
-                      <span className="price">$</span>
+                      <span className="price">৳</span>
                       {product.bids[0]?.amount?.toLocaleString("en-US", {
                         minimumFractionDigits: 2,
                         maximumFractionDigits: 2,
@@ -845,7 +845,7 @@ export default function MotorDetailsClient({ product: initialProduct, feedbackPe
                       {t("Starting From")}
                     </p>
                     <p className="text-4xl font-bold text-gray-900">
-                      <span className="price">$</span>
+                      <span className="price">৳</span>
                       {product.start_price?.toLocaleString("en-US", {
                         minimumFractionDigits: 2,
                         maximumFractionDigits: 2,
@@ -1076,7 +1076,7 @@ export default function MotorDetailsClient({ product: initialProduct, feedbackPe
               <div className="mb-6">
                 <p className="text-gray-500 text-sm">Asking price:</p>
                 <p className="text-3xl font-bold text-black">
-                  <span className="price">$</span>
+                  <span className="price">৳</span>
                   {Number(product?.buy_now_price)?.toLocaleString("en-US", {
                     minimumFractionDigits: 2,
                     maximumFractionDigits: 2,

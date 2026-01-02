@@ -244,18 +244,16 @@ export default function NoteModal({
           {/* Close Button */}
           <button
             onClick={onClose}
-            className={`absolute top-2 ${
-              isArabic ? "left-4" : "right-4"
-            } text-gray-400 hover:text-gray-600`}
+            className={`absolute top-2 ${isArabic ? "left-4" : "right-4"
+              } text-gray-400 hover:text-gray-600`}
           >
             <FaTimes size={18} />
           </button>
 
           {/* Heading */}
           <h2
-            className={`text-lg font-semibold mb-4 ${
-              isArabic ? "text-right" : "text-left"
-            }`}
+            className={`text-lg font-semibold mb-4 ${isArabic ? "text-right" : "text-left"
+              }`}
           >
             {isEditing
               ? t("Edit note for this listing")
@@ -308,7 +306,7 @@ export default function NoteModal({
                 {showStats ? t("Buy Now") : t("Sold Now")}
               </p>
               <p>
-                <span className="price">$</span>
+                <span className="price">৳</span>
                 {listing.price}
               </p>
             </div>

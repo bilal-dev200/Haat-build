@@ -141,9 +141,9 @@ const steps = [
 ];
 
 const stepFields = {
-    0: ["category_id", "title", "address", "floor_area", "condition", "property_type_field", "business_type", "land_area", "parking", "bedrooms", "bathrooms", "description"], // Property Details
-    1: ["images"], // Photos
-    2: ["buy_now_price", "start_price", "reserve_price", "expire_at"], // Price & Payment (The Refine takes care of the OR logic on final submit)
+  0: ["category_id", "title", "address", "floor_area", "condition", "property_type_field", "business_type", "land_area", "parking", "bedrooms", "bathrooms", "description"], // Property Details
+  1: ["images"], // Photos
+  2: ["buy_now_price", "start_price", "reserve_price", "expire_at"], // Price & Payment (The Refine takes care of the OR logic on final submit)
 };
 
 // Helper function to get max date (60 days from today)
@@ -213,7 +213,7 @@ const Properties = ({ initialValues, mode = "create" }) => {
     // Preserve as string for the controlled input field
     return parsed;
   }
-  
+
   const normalizedInitialValues = useMemo(() => {
     if (!initialValues) return {};
 
@@ -487,7 +487,7 @@ const Properties = ({ initialValues, mode = "create" }) => {
     } catch (error) {
       console.error("Error creating property listing:", error);
       setIsSubmitting(false);
-      
+
       // Handle API validation errors
       const validationErrors = error?.data?.data || error?.response?.data?.data;
       if (validationErrors && typeof validationErrors === "object") {
@@ -542,7 +542,7 @@ const Properties = ({ initialValues, mode = "create" }) => {
       const errorMessages = Object.values(errors)
         .filter((error) => error?.message)
         .map((error) => error.message);
-      
+
       if (errorMessages.length > 0) {
         errorMessages.forEach((msg) => toast.error(msg));
       } else {
@@ -648,7 +648,7 @@ const Properties = ({ initialValues, mode = "create" }) => {
           {category_id && selectedCategory ? (
             <div className="flex justify-between items-center">
               <p className="text-base text-green-600 font-semibold">
-                {selectedCategory?.parent?.name ? selectedCategory?.parent?.name + " > " + selectedCategory?.name : selectedCategory?.name }
+                {selectedCategory?.parent?.name ? selectedCategory?.parent?.name + " > " + selectedCategory?.name : selectedCategory?.name}
               </p>
               <button
                 type="button"
@@ -927,29 +927,29 @@ const Properties = ({ initialValues, mode = "create" }) => {
           </div>
           {(selectedCategory?.parent_id || selectedCategory?.parent_id) ==
             6154 && (
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Property Type
-              </label>
-              <Controller
-                name="property_type_field"
-                control={control}
-                render={({ field }) => (
-                  <select
-                    {...field}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500"
-                  >
-                    <option value="">Select Property Type</option>
-                    <option value="warehouse">Warehouse</option>
-                    <option value="shop">Shop</option>
-                    <option value="office">Office</option>
-                    <option value="restaurant">Restaurant</option>
-                    <option value="factory">Factory</option>
-                  </select>
-                )}
-              />
-            </div>
-          )}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Property Type
+                </label>
+                <Controller
+                  name="property_type_field"
+                  control={control}
+                  render={({ field }) => (
+                    <select
+                      {...field}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500"
+                    >
+                      <option value="">Select Property Type</option>
+                      <option value="warehouse">Warehouse</option>
+                      <option value="shop">Shop</option>
+                      <option value="office">Office</option>
+                      <option value="restaurant">Restaurant</option>
+                      <option value="factory">Factory</option>
+                    </select>
+                  )}
+                />
+              </div>
+            )}
 
           {(selectedCategory?.parent_id || selectedCategory?.id) == 6468 && ( // assuming 6153 is "Businesses"
             <div>
@@ -1047,24 +1047,24 @@ const Properties = ({ initialValues, mode = "create" }) => {
           {![6154, 6468].includes(
             selectedCategory?.parent_id || selectedCategory?.id
           ) && (
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Number of Bedrooms
-              </label>
-              <Controller
-                name="bedrooms"
-                control={control}
-                render={({ field }) => (
-                  <input
-                    {...field}
-                    type="number"
-                    min="0"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500"
-                  />
-                )}
-              />
-            </div>
-          )}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Number of Bedrooms
+                </label>
+                <Controller
+                  name="bedrooms"
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="number"
+                      min="0"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500"
+                    />
+                  )}
+                />
+              </div>
+            )}
           {/* Bathrooms */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -1154,27 +1154,27 @@ const Properties = ({ initialValues, mode = "create" }) => {
               )}
             />
           </div> */}
-           {/* Description */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Description *
-              </label>
-              <Controller
-                name="description"
-                control={control}
-                rules={{ required: "Description is required" }}
-                render={({ field: { onChange, value }, fieldState: { error } }) => (
-                  <div className="rounded-md">
-                    <QuillEditor
-                      value={value}
-                      onChange={onChange}
-                      error={error?.message}
-                      placeholder="Enter Description"
-                    />
-                  </div>
-                )}
-              />
-            </div>
+          {/* Description */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Description *
+            </label>
+            <Controller
+              name="description"
+              control={control}
+              rules={{ required: "Description is required" }}
+              render={({ field: { onChange, value }, fieldState: { error } }) => (
+                <div className="rounded-md">
+                  <QuillEditor
+                    value={value}
+                    onChange={onChange}
+                    error={error?.message}
+                    placeholder="Enter Description"
+                  />
+                </div>
+              )}
+            />
+          </div>
 
           {/* <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -1298,7 +1298,7 @@ const Properties = ({ initialValues, mode = "create" }) => {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Expected Price (<span className="price">$</span>)
+                Expected Price (<span className="price">৳</span>)
               </label>
               <Controller
                 name="buy_now_price"
@@ -1424,11 +1424,10 @@ const Properties = ({ initialValues, mode = "create" }) => {
                     }}
                     className={`w-full border px-4 py-2 rounded focus:outline-none focus:ring
                           [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none
-                          ${
-                            errors.expire_at
-                              ? "border-red-500 focus:border-red-500"
-                              : "border-gray-300 focus:border-green-400"
-                          }`}
+                          ${errors.expire_at
+                        ? "border-red-500 focus:border-red-500"
+                        : "border-gray-300 focus:border-green-400"
+                      }`}
                     placeholderText={t("Select date and time")}
                   />
                 )}
@@ -1501,26 +1500,23 @@ const Properties = ({ initialValues, mode = "create" }) => {
           {steps.map((step, index) => (
             <div key={step.key} className="flex items-center">
               <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                  index <= activeStep
+                className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${index <= activeStep
                     ? "bg-green-500 text-white"
                     : "bg-gray-200 text-gray-600"
-                }`}
+                  }`}
               >
                 {index + 1}
               </div>
               <span
-                className={`ml-2 text-sm font-medium ${
-                  index <= activeStep ? "text-green-600" : "text-gray-500"
-                }`}
+                className={`ml-2 text-sm font-medium ${index <= activeStep ? "text-green-600" : "text-gray-500"
+                  }`}
               >
                 {step.title}
               </span>
               {index < steps.length - 1 && (
                 <div
-                  className={`w-46 h-1 mx-4 ${
-                    index < activeStep ? "bg-green-500" : "bg-gray-200"
-                  }`}
+                  className={`w-46 h-1 mx-4 ${index < activeStep ? "bg-green-500" : "bg-gray-200"
+                    }`}
                 />
               )}
             </div>

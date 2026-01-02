@@ -73,7 +73,7 @@ const SearchResultCard = ({ item, viewMode = "grid" }) => {
                         {t("Price")}:
                     </div>
                     <div className="font-bold">
-                        <span className="price">$</span>
+                        <span className="price">৳</span>
                         {formatPrice(price)} {unit && <span className="text-sm text-gray-500 font-normal">/ {unit}</span>}
                     </div>
                 </div>

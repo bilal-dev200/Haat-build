@@ -15,7 +15,7 @@ const AuctionGrid = ({ heading, cards, centerHeading = false }) => {
         className={`text-lg sm:text-xl md:text-2xl font-semibold pb-1 mb-6 text-left whitespace-nowrap sm:whitespace-normal`}
       >
         <span className="inline-block border-b-2 border-gray-400">
-          <span className="price">$</span>
+          <span className="price">৳</span>
           {t("1 Reserve")}
         </span>
       </h2>
@@ -83,7 +83,7 @@ const AuctionGrid = ({ heading, cards, centerHeading = false }) => {
                 <div className="text-[9px] text-gray-400 uppercase tracking-wide">
                   Buy Now
                 </div>
-                <p className="font-bold"><span className="price">$</span>{card.buy_now_price}</p>
+                <p className="font-bold"><span className="price">৳</span>{card.buy_now_price}</p>
               </div>
 
               {/* <div className="px-3 pb-3 pt-1 text-gray-700">

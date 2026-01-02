@@ -14,7 +14,7 @@ import Image from "next/image";
 
 
 const Page = () => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   const router = useRouter();
   const [search, setSearch] = useState("");
   const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
@@ -25,14 +25,14 @@ const Page = () => {
   useEffect(() => {
     fetchWatchlist();
   }, []);
- useEffect(() => {
+  useEffect(() => {
     console.log("Watchlist from store:", watchlist);
   }, [watchlist]);
 
   const filteredWatchlist = watchlist.filter((item) =>
     item?.listing?.title?.toLowerCase().includes(search.toLowerCase())
   );
- useEffect(() => {
+  useEffect(() => {
     console.log("Filtered Watchlist:", filteredWatchlist);
   }, [filteredWatchlist]);
   return (
@@ -64,7 +64,7 @@ const Page = () => {
               if (listing.type === "service") {
                 return `/services/${listing?.slug}`;
               }
-              
+
               if (listing.type === "job") {
                 return `/jobs/${listing?.slug}`;
               }
@@ -152,7 +152,7 @@ const Page = () => {
                       <>
                         <span className="text-xs text-gray-500 block">{t("Buy Now")}</span>
                         <span className="font-semibold text-gray-800 text-base">
-                          <span className="price">$</span>
+                          <span className="price">৳</span>
                           <span className="ml-1">{buyNowPrice}</span>
                         </span>
                       </>
@@ -160,7 +160,7 @@ const Page = () => {
                       <>
                         <span className="text-xs text-gray-500 block">{t("Current Bid")}</span>
                         <span className="font-semibold text-gray-800 text-base">
-                          <span className="price">$</span>
+                          <span className="price">৳</span>
                           <span className="ml-1">{highestBid.amount}</span>
                         </span>
                       </>
@@ -168,7 +168,7 @@ const Page = () => {
                       <>
                         <span className="text-xs text-gray-500 block">{t("Starting Price")}</span>
                         <span className="font-semibold text-gray-800 text-base">
-                          <span className="price">$</span>
+                          <span className="price">৳</span>
                           <span className="ml-1">{startPrice}</span>
                         </span>
                       </>

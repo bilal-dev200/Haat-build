@@ -35,7 +35,7 @@ const UserBalance = () => {
             </p>
             <div className=" items-center mb-1">
               <FaPaypal className="text-green-600 text-4xl mr-2" />
-              {/* <span className="price">$</span>{Number(bid.amount).toLocaleString()} */}
+              {/* <span className="price">৳</span>{Number(bid.amount).toLocaleString()} */}
 
               <span className="text-2xl font-semibold mt-10 price">$</span>
 

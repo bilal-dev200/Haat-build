@@ -132,7 +132,7 @@
 //                         Buy Now:
 //                       </div>
 //                       <div className="font-bold">
-//                         <span className="price">$</span>
+//                         <span className="price">৳</span>
 //                         {item.listing.buy_now_price}
 //                       </div>
 //                     </div>
@@ -396,7 +396,7 @@ const Watchlist = () => {
                                                     {t("Buy Now:")}
                                                 </div>
                                                 <div className="font-bold">
-                                                    <span className="price">$</span>
+                                                    <span className="price">৳</span>
                                                     {item.listing.buy_now_price}
                                                 </div>
                                             </div>
@@ -415,7 +415,7 @@ const Watchlist = () => {
                                                     {isExpired ? "Highest Bid:" : "Current Bid:"}
                                                 </div>
                                                 <div className="font-bold">
-                                                    <span className="price">$</span>
+                                                    <span className="price">৳</span>
                                                     {highestBid}
                                                 </div>
                                             </div>

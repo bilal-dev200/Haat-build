@@ -185,7 +185,7 @@ const GridLayout = () => {
             {item.title}
           </p>
           <p className="text-xs text-start text-black">
-            <span className="price">$</span>
+            <span className="price">৳</span>
             {Number(item.buy_now_price)}
           </p>
         </div>
@@ -199,7 +199,7 @@ const GridLayout = () => {
             {item.title}
           </p>
           <p className="text-xs text-start text-black">
-            <span className="price">$</span>
+            <span className="price">৳</span>
             {Number(item.price)} {item.price_unit}
           </p>
         </div>

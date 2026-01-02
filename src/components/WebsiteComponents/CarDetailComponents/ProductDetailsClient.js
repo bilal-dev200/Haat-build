@@ -79,7 +79,7 @@ function BidHistoryModal({ bids, open, onClose }) {
                         {bid.user?.name || "Unknown"}
                       </td>
                       <td className="py-2 px-3 border whitespace-nowrap">
-                        <span className="price">$</span>
+                        <span className="price">৳</span>
                         {Number(bid.amount).toLocaleString()}
                       </td>
                       <td className="py-2 px-3 border capitalize whitespace-nowrap">
@@ -157,7 +157,7 @@ function BuyNowModal({ isOpen, onClose, product, onBuyNow }) {
             {t("Are you sure you want to buy this item now for")}
           </p>
           <p className="text-2xl sm:text-3xl font-bold text-green-600 mb-1">
-            <span className="price">$</span>
+            <span className="price">৳</span>
             {product.buy_now_price}
           </p>
           <p className="text-sm sm:text-base text-gray-500 truncate">
@@ -792,7 +792,7 @@ export default function ProductDetailsClient({
                         Buy Now
                       </span>
                       <span className="block text-4xl font-bold text-gray-900">
-                        <span className="price">$</span>
+                        <span className="price">৳</span>
                         {product.buy_now_price}
                       </span>
                     </div>
@@ -819,7 +819,7 @@ export default function ProductDetailsClient({
                       {t("Current Bid")}
                     </p>
                     <p className="text-4xl font-bold text-gray-900">
-                      <span className="price">$</span>
+                      <span className="price">৳</span>
                       {product.bids[0]?.amount || "0.00"}
                     </p>
                   </div>
@@ -829,7 +829,7 @@ export default function ProductDetailsClient({
                       {t("Starting From")}
                     </p>
                     <p className="text-4xl font-bold text-gray-900">
-                      <span className="price">$</span>
+                      <span className="price">৳</span>
                       {product.start_price || "0.00"}
                     </p>
                   </div>
@@ -1105,7 +1105,7 @@ export default function ProductDetailsClient({
               <div className="my-6">
                 <p className="text-gray-500 text-sm">{t("Asking price")}:</p>
                 <p className="text-3xl font-bold text-black">
-                  <span className="price">$</span>
+                  <span className="price">৳</span>
                   {product?.buy_now_price}{" "}
                 </p>
               </div>

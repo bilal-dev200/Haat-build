@@ -34,7 +34,7 @@ function OffersModal({ offers = [], open, onClose, onAccept, onDecline }) {
               >
                 <div className="flex-1">
                   <div className="text-lg font-bold text-gray-900 mb-1">
-                    <span className="price">$</span>
+                    <span className="price">৳</span>
                     {offer.amount}
                   </div>
                   <div className="text-xs text-gray-500 mb-1">
@@ -49,12 +49,12 @@ function OffersModal({ offers = [], open, onClose, onAccept, onDecline }) {
                         const seconds = Math.floor((diffMs / 1000) % 60);
                         return expiresAt
                           ? `Expires in ${hours
-                              .toString()
-                              .padStart(2, "0")}:${minutes
+                            .toString()
+                            .padStart(2, "0")}:${minutes
                               .toString()
                               .padStart(2, "0")}:${seconds
-                              .toString()
-                              .padStart(2, "0")}`
+                                .toString()
+                                .padStart(2, "0")}`
                           : "Expires in: -";
                       }
                       return getTimeLeft(offer.expires_at);
@@ -123,14 +123,14 @@ function AcceptBidModal({
         <h2 className="text-xl font-bold mb-4">{t("Highest Bid")}</h2>
         <div className="mb-4 text-gray-700">
           <p className="mb-2">
-            The reserve price (<span className="price">$</span>
+            The reserve price (<span className="price">৳</span>
             {reservePrice}){t("was")}{" "}
             <span className="font-bold text-red-600">{t("not met")}</span>.
           </p>
           <p className="mb-2">
             {t("The highest bid is")}{" "}
             <span className="font-bold">
-              <span className="price">$</span>
+              <span className="price">৳</span>
               {bid?.amount}
             </span>{" "}
             {t("by")}{" "}
@@ -142,7 +142,7 @@ function AcceptBidModal({
           {/* <p className="mb-2">
             The highest bid is{" "}
             <span className="font-bold">
-              <span className="price">$</span>
+              <span className="price">৳</span>
               {bid?.amount}
             </span>{" "}
             by{" "}
@@ -280,7 +280,7 @@ export default function ListingCard({ listing, actions }) {
         <div className="text-right sm:text-left mt-2 sm:mt-0">
           <span className="text-xs text-gray-500 block">{t("Buy Now")}</span>
           <span className="font-semibold text-gray-800 text-base">
-            <span className="price">$</span>
+            <span className="price">৳</span>
             <span className="ml-1">{listing.price}</span>
           </span>
         </div>
