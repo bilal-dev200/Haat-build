@@ -14,7 +14,7 @@ import { FaPlus, FaTimes } from "react-icons/fa";
 // ✅ Zod schema validation
 const schema = z.object({
   summary: z.string().min(5, "Summary is required"),
-    preferred_role: z.array(
+  preferred_role: z.array(
     z.object({
       value: z.string().min(1, "Role cannot be empty"),
     })
@@ -67,7 +67,7 @@ const DetailsForm = ({ onCancel, defaultData, onSuccess }) => {
     resolver: zodResolver(schema),
     defaultValues: {
       summary: defaultData?.summary || "",
-       preferred_role: defaultData?.preferred_role?.map((r) => ({ value: r })) || [],
+      preferred_role: defaultData?.preferred_role?.map((r) => ({ value: r })) || [],
       open_to_all_roles: defaultData?.open_to_all_roles || false,
       right_to_work_in_saudi: defaultData?.right_to_work_in_saudi || false,
       industry_id: defaultData?.industry_id ? String(defaultData.industry_id) : "",
@@ -81,17 +81,17 @@ const DetailsForm = ({ onCancel, defaultData, onSuccess }) => {
   });
 
   const { fields, append, remove } = useFieldArray({
-  control,
-  name: "preferred_role",
-});
+    control,
+    name: "preferred_role",
+  });
 
 
-useEffect(() => {
-  if (defaultData?.preferred_role?.length) {
-    const formattedRoles = defaultData.preferred_role.map((r) => ({ value: r }));
-    setValue("preferred_role", formattedRoles);
-  }
-}, [defaultData, setValue]);
+  useEffect(() => {
+    if (defaultData?.preferred_role?.length) {
+      const formattedRoles = defaultData.preferred_role.map((r) => ({ value: r }));
+      setValue("preferred_role", formattedRoles);
+    }
+  }, [defaultData, setValue]);
 
   console.log("Fields:", defaultData?.preferred_role, fields);
 
@@ -138,7 +138,7 @@ useEffect(() => {
         });
       } else {
         toast.error(errorResponse?.message || err?.message || "Failed to save details.");
-      } 
+      }
     } finally {
       setLoading(false);
     }
@@ -189,24 +189,24 @@ useEffect(() => {
                 </button>
               </div>
 
-      <div className="flex flex-wrap gap-2">
- {fields.map((field, index) => (
-  <div
-    key={field.id}
-    className="flex items-center bg-gray-200 text-gray-800 px-3 py-1 rounded-full"
-  >
-    <span>{field.value}</span>
-    <button
-      type="button"
-      onClick={() => remove(index)}
-      className="ml-2 text-red-500 hover:text-red-700"
-    >
-      <FaTimes size={12} />
-    </button>
-  </div>
-))}
+              <div className="flex flex-wrap gap-2">
+                {fields.map((field, index) => (
+                  <div
+                    key={field.id}
+                    className="flex items-center bg-gray-200 text-gray-800 px-3 py-1 rounded-full"
+                  >
+                    <span>{field.value}</span>
+                    <button
+                      type="button"
+                      onClick={() => remove(index)}
+                      className="ml-2 text-red-500 hover:text-red-700"
+                    >
+                      <FaTimes size={12} />
+                    </button>
+                  </div>
+                ))}
 
-</div>
+              </div>
 
 
 
@@ -248,7 +248,7 @@ useEffect(() => {
           </label>
           <label className="flex items-center space-x-2">
             <input type="checkbox" {...register("right_to_work_in_saudi")} />
-            <span>{t("Right to work in Saudi Arabia")}</span>
+            <span>{t("Right to work")}</span>
           </label>
         </div>
       </div>

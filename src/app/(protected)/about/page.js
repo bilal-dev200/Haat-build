@@ -33,7 +33,7 @@ const page = () => {
           <h2 className="text-3xl font-bold mb-4">{t("Who We Are")}</h2>
           <p className="leading-relaxed">
             {t(
-              "Haat is Saudi Arabia’s modern, mobile-first marketplace designed to connect buyers and sellers with ease, trust, and efficiency. Whether you’re searching for a family car, a new home, a job opportunity, or unique household items, Haat brings it all together in one simple, secure platform."
+              "Haat is modern, mobile-first marketplace designed to connect buyers and sellers with ease, trust, and efficiency. Whether you’re searching for a family car, a new home, a job opportunity, or unique household items, Haat brings it all together in one simple, secure platform."
             )}
           </p>
           <p className="mt-4 leading-relaxed">
@@ -52,7 +52,7 @@ const page = () => {
         <h2 className="text-3xl font-bold mb-6">{t("Our Mission")}</h2>
         <p className="max-w-3xl mx-auto leading-relaxed">
           {t(
-            "To create Saudi Arabia’s most trusted and user-friendly online marketplace — making buying and selling effortless for everyone, from first-time users to seasoned traders."
+            "To create most trusted and user-friendly online marketplace — making buying and selling effortless for everyone, from first-time users to seasoned traders."
           )}
         </p>
       </section>
@@ -114,7 +114,7 @@ const page = () => {
               <h3 className="font-semibold text-xl mb-2">{t("Community-Driven")}</h3>
               <p className="text-gray-600">
                 {t(
-                  "Empowering individuals, families, and SMEs across Saudi Arabia to connect, grow, and thrive together through trade."
+                  "Empowering individuals, families, and SMEs to connect, grow, and thrive together through trade."
                 )}
               </p>
             </div>

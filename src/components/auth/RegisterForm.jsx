@@ -22,7 +22,7 @@ export default function RegisterForm({ onSubmit, isLoading }) {
     email: "",
     phone: "",
     // billing_address: "",
-    country: "Saudi Arabia", 
+    country: "Bangladesh",
     governorate: '',
     city: "",
     region: "",
@@ -42,22 +42,22 @@ export default function RegisterForm({ onSubmit, isLoading }) {
   const selectedRegion = regions.find((r) => r.name === formData.region);
   const governorates =
     regions.find((r) => r.name == formData.region)?.governorates || [];
-    const selectedGovernorate = governorates.find(
-  (g) => g.name == formData.governorate
-);
+  const selectedGovernorate = governorates.find(
+    (g) => g.name == formData.governorate
+  );
   const cities =
     governorates.find((g) => g.name === formData.city)?.cities || [];
-    const selectedCity = cities.find((c) => c.name === formData.area);
+  const selectedCity = cities.find((c) => c.name === formData.area);
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language === "ar";
 
-    useEffect(() => {
-    getAllLocations(); 
+  useEffect(() => {
+    getAllLocations();
   }, [getAllLocations]);
-console.log('res', formData.region)
+  console.log('res', formData.region)
   // useEffect(() => {
   //   const allCountries = Country.getAllCountries();
   //   setCountries(allCountries);
@@ -191,32 +191,32 @@ console.log('res', formData.region)
   //     setErrors((prev) => ({ ...prev, [name]: "" }));
   //   }
   // };
-const handleChange = (e) => {
-  const { name, value } = e.target;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
-  setFormData((prev) => {
-    const updated = { ...prev, [name]: value };
+    setFormData((prev) => {
+      const updated = { ...prev, [name]: value };
 
-    // If user edits password after confirmPassword was already filled
-    if (name === "password") {
-      updated.confirmPassword = ""; // reset confirm password
-      setErrors((prev) => ({ ...prev, confirmPassword: "" })); // clear error
+      // If user edits password after confirmPassword was already filled
+      if (name === "password") {
+        updated.confirmPassword = ""; // reset confirm password
+        setErrors((prev) => ({ ...prev, confirmPassword: "" })); // clear error
+      }
+
+      // Live validation
+      validateField(name, value, updated);
+      if (name === "confirmPassword") {
+        validateField("confirmPassword", updated.confirmPassword, updated);
+      }
+
+      return updated;
+    });
+
+    // Clear error for current field
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
-
-    // Live validation
-    validateField(name, value, updated);
-    if (name === "confirmPassword") {
-      validateField("confirmPassword", updated.confirmPassword, updated);
-    }
-
-    return updated;
-  });
-
-  // Clear error for current field
-  if (errors[name]) {
-    setErrors((prev) => ({ ...prev, [name]: "" }));
-  }
-};
+  };
 
 
   const handleStateChange = (e) => {
@@ -230,14 +230,14 @@ const handleChange = (e) => {
     }));
 
     // Step 2: Get state's ISO code
-    const stateList = State.getStatesOfCountry("SA"); // SA = Saudi Arabia
+    const stateList = State.getStatesOfCountry("BD"); // BD = Bangladesh
     const matchedState = stateList.find(
       (state) => state.name === selectedState
     );
     const isoCode = matchedState?.isoCode;
 
     // Step 3: Get cities based on selected state ISO code
-    const selectedCities = City.getCitiesOfState("SA", isoCode);
+    const selectedCities = City.getCitiesOfState("BD", isoCode);
     setCities(selectedCities); // set dropdown values
 
     // Step 4: Clear validation error if present
@@ -285,10 +285,10 @@ const handleChange = (e) => {
     }
     // if (!formData.billing_address)
     //   newErrors.billing_address = "Address is required";
-    if (!formData.country) newErrors.country = "Country is required";
-    // if (!formData.city) newErrors.city = "City is required";
-    if (!formData.region) newErrors.region = "Region is required";
-    if (!formData.governorate) newErrors.governorate = "Governorate is required";
+    // if (!formData.country) newErrors.country = "Country is required";
+    // // if (!formData.city) newErrors.city = "City is required";
+    // if (!formData.region) newErrors.region = "Region is required";
+    // if (!formData.governorate) newErrors.governorate = "Governorate is required";
 
 
 
@@ -335,15 +335,15 @@ const handleChange = (e) => {
       case "billing_address":
         if (!value) error = "Address is required";
         break;
-      case "country":
-        if (!value) error = "Country is required";
-        break;
-      case "region":
-        if (!value) error = "Region is required";
-        break;
-          case "governorate":
-        if (!value) error = "Governorate is required";
-        break;
+      // case "country":
+      //   if (!value) error = "Country is required";
+      //   break;
+      // case "region":
+      //   if (!value) error = "Region is required";
+      //   break;
+      // case "governorate":
+      //   if (!value) error = "Governorate is required";
+      //   break;
       // case "city":
       //   if (!value) error = "City is required";
       //   break;
@@ -361,12 +361,12 @@ const handleChange = (e) => {
       //   }
       //   break;
       case "confirmPassword":
-  if (value && value !== formData.password) {
-    error = "Passwords do not match";
-  } else {
-    error = "";
-  }
-  break;
+        if (value && value !== formData.password) {
+          error = "Passwords do not match";
+        } else {
+          error = "";
+        }
+        break;
 
       default:
         break;
@@ -381,10 +381,10 @@ const handleChange = (e) => {
     const updatedFormData = {
       ...formData,
       name: `${formData.first_name} ${formData.last_name}`.trim(),
-      country_id: country?.id || null,
-    regions_id: selectedRegion?.id || null,
-    governorates_id: selectedGovernorate?.id || null,
-    // city_id: selectedCity?.id || null,
+      // country_id: country?.id || null,
+      // regions_id: selectedRegion?.id || null,
+      // governorates_id: selectedGovernorate?.id || null,
+      // city_id: selectedCity?.id || null,
     };
     console.log(updatedFormData);
     if (validate()) {
@@ -435,74 +435,74 @@ const handleChange = (e) => {
       <div className="flex gap-4">
 
 
-      <div className="md:w-1/3 relative">
-  <label className="block mb-1 text-sm font-medium">
-    {t("Username")}
-  </label>
+        <div className="md:w-1/3 relative">
+          <label className="block mb-1 text-sm font-medium">
+            {t("Username")}
+          </label>
 
-  <div className="relative">
-    <input
-      type="text"
-      name="username"
-      value={formData.username}
-      onChange={handleChange}
-      required
-      minLength={3}
-      className={`w-full p-2 border rounded-md
+          <div className="relative">
+            <input
+              type="text"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+              required
+              minLength={3}
+              className={`w-full p-2 border rounded-md
         ${errors.username
-          ? "border-red-500"
-          : "border-gray-300"
-        }`}
-    />
+                  ? "border-red-500"
+                  : "border-gray-300"
+                }`}
+            />
 
-    {/* Loader / Success / Error Icons */}
-    {checkingUsername && (
-      <ImSpinner2 className="absolute right-3 top-3 text-gray-400 animate-spin text-lg" />
-    )}
+            {/* Loader / Success / Error Icons */}
+            {checkingUsername && (
+              <ImSpinner2 className="absolute right-3 top-3 text-gray-400 animate-spin text-lg" />
+            )}
 
-    {!checkingUsername && !errors.username && formData.username && (
-      <FaCheckCircle className="absolute right-3 top-3 text-green-500 text-lg" />
-    )}
+            {!checkingUsername && !errors.username && formData.username && (
+              <FaCheckCircle className="absolute right-3 top-3 text-green-500 text-lg" />
+            )}
 
-    {!checkingUsername && errors.username && (
-      <FaTimesCircle className="absolute right-3 top-3 text-red-500 text-lg" />
-    )}
-  </div>
+            {!checkingUsername && errors.username && (
+              <FaTimesCircle className="absolute right-3 top-3 text-red-500 text-lg" />
+            )}
+          </div>
 
-  {/* Error + Suggestions */}
-  {!checkingUsername && errors.username && (
-    <div className="mt-2 ">
-      {/* <p className="text-red-600 flex items-center gap-1 mb-1">
+          {/* Error + Suggestions */}
+          {!checkingUsername && errors.username && (
+            <div className="mt-2 ">
+              {/* <p className="text-red-600 flex items-center gap-1 mb-1">
         ❌ {errors.username}
       </p> */}
 
-      {usernameSuggestions.length > 0 && (
-        <>
-          <p className="text-gray-600 mb-1 text-xs">
-            Try one of these:
-          </p>
-          <div className="flex flex-wrap gap-1">
-            {usernameSuggestions.slice(0, 3).map((sug, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => {
-                  setFormData((prev) => ({ ...prev, username: sug }));
-                  setErrors((prev) => ({ ...prev, username: "" }));
-                  setUsernameSuggestions([]);
-                }}
-                className="px-2 py-1 rounded-full text-[10px] font-medium bg-green-100 text-green-700 
+              {usernameSuggestions.length > 0 && (
+                <>
+                  <p className="text-gray-600 mb-1 text-xs">
+                    Try one of these:
+                  </p>
+                  <div className="flex flex-wrap gap-1">
+                    {usernameSuggestions.slice(0, 3).map((sug, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => {
+                          setFormData((prev) => ({ ...prev, username: sug }));
+                          setErrors((prev) => ({ ...prev, username: "" }));
+                          setUsernameSuggestions([]);
+                        }}
+                        className="px-2 py-1 rounded-full text-[10px] font-medium bg-green-100 text-green-700 
                            hover:bg-green-200 transition-colors duration-200"
-              >
-                {sug}
-              </button>
-            ))}
-          </div>
-        </>
-      )}
-    </div>
-  )}
-</div>
+                      >
+                        {sug}
+                      </button>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          )}
+        </div>
 
 
 
@@ -548,8 +548,8 @@ const handleChange = (e) => {
             {t("Phone Number")}
           </label>
           <PhoneInput
-            country={"sa"}
-            onlyCountries={["sa"]}
+            country={"bd"}
+            onlyCountries={["bd"]}
             disableDropdown={true}
             countryCodeEditable={false}
             value={formData.phone}
@@ -581,13 +581,13 @@ const handleChange = (e) => {
       </div>
 
 
-      <div className="flex flex-col md:flex-row md:gap-4 w-full">
+      {/*       <div className="flex flex-col md:flex-row md:gap-4 w-full">
         <div className="md:w-1/3 md:mt-1">
           <label className="block text-sm font-medium">{t("Country")}</label>
           <input
             type="text"
             name="country"
-            value="Saudi Arabia"
+            value="Bangladesh"
             disabled
             readOnly
             className="w-full mt-0.5 p-1.5 border border-gray-200 rounded-md bg-gray-100 text-gray-700 cursor-not-allowed"
@@ -596,25 +596,23 @@ const handleChange = (e) => {
 
         <div className="md:w-1/3">
           <label className="block mb-1 text-sm font-medium">{t("Region")}</label>
-          {/* {states.length > 0 && ( */}
-            <Select
-              name="region"
-              value={formData.region ? { value: formData.region, label: formData.region } : null}
-          onChange={(selected) =>
-            setFormData((prev) => ({
-              ...prev,
-              region: selected?.value || "",
-              governorate: "",
-              city: "",
-            }))
-          }
-          options={regions.map((r) => ({ value: r.name, label: r.name }))}
-              placeholder={t("Select a Region")}
-              className="text-sm"
-              classNamePrefix="react-select"
-              isClearable
-            />
-          {/* )} */}
+          <Select
+            name="region"
+            value={formData.region ? { value: formData.region, label: formData.region } : null}
+            onChange={(selected) =>
+              setFormData((prev) => ({
+                ...prev,
+                region: selected?.value || "",
+                governorate: "",
+                city: "",
+              }))
+            }
+            options={regions.map((r) => ({ value: r.name, label: r.name }))}
+            placeholder={t("Select a Region")}
+            className="text-sm"
+            classNamePrefix="react-select"
+            isClearable
+          />
           {errors.region && (
             <p className="mt-1 text-sm text-red-600">{errors.region}</p>
           )}
@@ -622,33 +620,31 @@ const handleChange = (e) => {
 
         <div className="md:w-1/3">
           <label className="block mb-1 text-sm font-medium">{t("Governorate")}</label>
-          {/* {cities.length > 0 && ( */}
-            <Select
-              name="governorate"
-              value={
-            formData.governorate
-              ? { value: formData.governorate, label: formData.governorate }
-              : null
-          }
-          onChange={(selected) =>
-            setFormData((prev) => ({
-              ...prev,
-              governorate: selected?.value || "",
-              city: "",
-            }))
-          }
-          options={governorates.map((g) => ({ value: g.name, label: g.name }))}
-              placeholder={t("Select a Governorate")}
-              className="text-sm"
-              classNamePrefix="react-select"
-              isClearable
-            />
-          {/* )} */}
+          <Select
+            name="governorate"
+            value={
+              formData.governorate
+                ? { value: formData.governorate, label: formData.governorate }
+                : null
+            }
+            onChange={(selected) =>
+              setFormData((prev) => ({
+                ...prev,
+                governorate: selected?.value || "",
+                city: "",
+              }))
+            }
+            options={governorates.map((g) => ({ value: g.name, label: g.name }))}
+            placeholder={t("Select a Governorate")}
+            className="text-sm"
+            classNamePrefix="react-select"
+            isClearable
+          />
           {errors.governorate && (
             <p className="mt-1 text-sm text-red-600">{errors.governorate}</p>
           )}
         </div>
-      </div>
+      </div> */}
 
       {/* <div className="flex flex-col md:flex-row md:gap-4 w-full">
 <div className="mt-2 md:w-1/2">
@@ -721,18 +717,18 @@ const handleChange = (e) => {
           <label className="block mb-1 text-sm font-medium">
             {t("Password")}
           </label>
-            <div className="relative">
-          <input
-            type={showPassword ? "text" : "password"}
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-            minLength={6}
-            className={`w-full p-2 ${isArabic ? "pl-10" : "pr-10"} border rounded-md ${errors.password ? "border-red-500" : "border-gray-300"
-              }`}
-          />
-          {/* <button
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+              minLength={6}
+              className={`w-full p-2 ${isArabic ? "pl-10" : "pr-10"} border rounded-md ${errors.password ? "border-red-500" : "border-gray-300"
+                }`}
+            />
+            {/* <button
             type="button"
             className={`absolute inset-y-0 top-6 flex items-center text-gray-500 hover:text-gray-700 ${isArabic ? "left-3" : "right-3"
               }`}
@@ -745,50 +741,49 @@ const handleChange = (e) => {
               <BsFillEyeSlashFill className="w-5 h-5" />
             )}
           </button> */}
-           <span
-      className={`absolute inset-y-0 top-0.5 flex items-center text-gray-500 hover:text-gray-700 ${isArabic ? "left-3" : "right-3"
-              }`}
-      onClick={() => setShowPassword(!showPassword)}
-    >
-      {showPassword ? <BsFillEyeSlashFill /> : <IoEyeSharp />}
-    </span>
+            <span
+              className={`absolute inset-y-0 top-0.5 flex items-center text-gray-500 hover:text-gray-700 ${isArabic ? "left-3" : "right-3"
+                }`}
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <BsFillEyeSlashFill /> : <IoEyeSharp />}
+            </span>
           </div>
-      {errors.password && (
-        <p className="mt-1 text-sm text-red-600">{errors.password}</p>
-      )}
+          {errors.password && (
+            <p className="mt-1 text-sm text-red-600">{errors.password}</p>
+          )}
         </div>
 
         {/* Confirm Password Field */}
         <div className="relative w-1/2">
-  <label className="block mb-1 text-sm font-medium">
-    {t("Confirm Password")}
-  </label>
+          <label className="block mb-1 text-sm font-medium">
+            {t("Confirm Password")}
+          </label>
 
-  <div className="relative">
-    <input
-      type={showConfirmPassword ? "text" : "password"}
-      name="confirmPassword"
-      value={formData.confirmPassword}
-      onChange={handleChange}
-      className={`w-full p-2 border rounded-md ${
-        errors.confirmPassword ? "border-red-500" : "border-gray-300"
-      }`}
-    />
+          <div className="relative">
+            <input
+              type={showConfirmPassword ? "text" : "password"}
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              className={`w-full p-2 border rounded-md ${errors.confirmPassword ? "border-red-500" : "border-gray-300"
+                }`}
+            />
 
-    <span
-      className="absolute right-3 top-3 cursor-pointer text-gray-500 hover:text-gray-700"
-      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-    >
-      {showConfirmPassword ? <BsFillEyeSlashFill /> : <IoEyeSharp />}
-    </span>
-  </div>
+            <span
+              className="absolute right-3 top-3 cursor-pointer text-gray-500 hover:text-gray-700"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+            >
+              {showConfirmPassword ? <BsFillEyeSlashFill /> : <IoEyeSharp />}
+            </span>
+          </div>
 
-  {errors.confirmPassword && (
-    <p className="mt-1 text-sm text-red-600">
-      {errors.confirmPassword}
-    </p>
-  )}
-</div>
+          {errors.confirmPassword && (
+            <p className="mt-1 text-sm text-red-600">
+              {errors.confirmPassword}
+            </p>
+          )}
+        </div>
 
       </div>
 
@@ -826,6 +821,6 @@ const handleChange = (e) => {
           t("Register")
         )}
       </button>
-    </form>
+    </form >
   );
 }

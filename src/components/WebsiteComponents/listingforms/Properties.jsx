@@ -1501,8 +1501,8 @@ const Properties = ({ initialValues, mode = "create" }) => {
             <div key={step.key} className="flex items-center">
               <div
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${index <= activeStep
-                    ? "bg-green-500 text-white"
-                    : "bg-gray-200 text-gray-600"
+                  ? "bg-green-500 text-white"
+                  : "bg-gray-200 text-gray-600"
                   }`}
               >
                 {index + 1}

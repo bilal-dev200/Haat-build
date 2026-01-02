@@ -186,8 +186,8 @@ const EditContactDetails = () => {
   };
   const { t } = useTranslation();
   const [selectedCountry, setSelectedCountry] = useState({
-    label: "Saudi Arabia",
-    value: "SA",
+    label: "Bangladesh",
+    value: "BD",
   });
   const [selectedState, setSelectedState] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
@@ -402,8 +402,8 @@ const EditContactDetails = () => {
                 control={control}
                 render={({ field }) => (
                   <PhoneInput
-                    country="sa"
-                    onlyCountries={["sa"]}
+                    country="bd"
+                    onlyCountries={["bd"]}
                     disableDropdown
                     countryCodeEditable={false}
                     value={field.value || ""}
@@ -485,7 +485,7 @@ const EditContactDetails = () => {
             <Select
               isDisabled
               value={selectedCountry}
-              options={[{ label: t("Saudi Arabia"), value: "SA" }]}
+              options={[{ label: t("Bangladesh"), value: "BD" }]}
               className="w-full"
               onChange={setSelectedCountry}
             />

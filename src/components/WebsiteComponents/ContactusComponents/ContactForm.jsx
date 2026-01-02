@@ -51,23 +51,23 @@ const ContactForm = () => {
       .required("Phone is required"),
     subject: yup.string().required("Subject is required"),
     message: yup.string().required("Message is required"),
-    region: yup
-      .mixed()
-      .test("region-type", "Region is required", function (value) {
-        // allow string or object but not null/undefined
-        if (!value) return false;
-        if (typeof value === "string" && value.trim() !== "") return true;
-        if (typeof value === "object" && Object.keys(value).length > 0) return true;
-        return false;
-      }),
-    governorate: yup
-      .mixed()
-      .test("governorate-type", "Governorate is required", function (value) {
-        if (!value) return false;
-        if (typeof value === "string" && value.trim() !== "") return true;
-        if (typeof value === "object" && Object.keys(value).length > 0) return true;
-        return false;
-      }),
+    // region: yup
+    //   .mixed()
+    //   .test("region-type", "Region is required", function (value) {
+    //     // allow string or object but not null/undefined
+    //     if (!value) return false;
+    //     if (typeof value === "string" && value.trim() !== "") return true;
+    //     if (typeof value === "object" && Object.keys(value).length > 0) return true;
+    //     return false;
+    //   }),
+    // governorate: yup
+    //   .mixed()
+    //   .test("governorate-type", "Governorate is required", function (value) {
+    //     if (!value) return false;
+    //     if (typeof value === "string" && value.trim() !== "") return true;
+    //     if (typeof value === "object" && Object.keys(value).length > 0) return true;
+    //     return false;
+    //   }),
   });
 
   const {
@@ -84,7 +84,7 @@ const ContactForm = () => {
       phone: "",
       subject: "",
       message: "",
-      country: "Saudi Arabia",
+      country: "Bangladesh",
       region: "",
       governorate: "",
     },
@@ -102,7 +102,7 @@ const ContactForm = () => {
         phone: user.mobile || "",
         subject: "",
         message: "",
-        country: "Saudi Arabia",
+        country: "Bangladesh",
         region: user.regions,
         governorate: user.governorates,
       });
@@ -138,9 +138,9 @@ const ContactForm = () => {
     const allCountries = Country.getAllCountries();
     setCountries(allCountries);
 
-    const defaultCities = City.getCitiesOfCountry("SA");
+    const defaultCities = City.getCitiesOfCountry("BD");
     setCities(defaultCities);
-    const defaultStates = State.getStatesOfCountry("SA");
+    const defaultStates = State.getStatesOfCountry("BD");
     setStates(defaultStates);
   }, []);
   useEffect(() => {
@@ -164,10 +164,10 @@ const ContactForm = () => {
         phone_number: data.phone,
         subject: data.subject,
         message: data.message,
-        country: data.country,
-        region_id: selectedRegion?.value || null,
-        governorate_id:
-          selectedGovernorate?.value || null,
+        // country: data.country,
+        // region_id: selectedRegion?.value || null,
+        // governorate_id:
+        //   selectedGovernorate?.value || null,
       };
 
       const response = await userApi.contactmessage(payload);
@@ -250,8 +250,8 @@ const ContactForm = () => {
                 control={control}
                 render={({ field }) => (
                   <PhoneInput
-                    country="sa"
-                    onlyCountries={["sa"]}
+                    country="bd"
+                    onlyCountries={["bd"]}
                     disableDropdown
                     countryCodeEditable={false}
                     value={field.value || ""}
@@ -296,94 +296,93 @@ const ContactForm = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-            {/* Country */}
-            <div>
-              <label className="block text-sm font-medium">
-                {t("Country")}
-              </label>
-              <input
-                type="text"
-                value="Saudi Arabia"
-                readOnly
-                disabled
-                className="w-full p-1.5 border border-gray-200 rounded bg-gray-100 cursor-not-allowed"
-              />
-            </div>
-            {/* Region */}{" "}
-            <div>
-              {" "}
-              <label className="block text-sm font-medium">
-                {t("Region")}
-              </label>{" "}
-              <Controller
-                control={control}
-                name="region"
-                render={({ field }) => (
-                  <Select
-                    {...field}
-                    options={regions.map((r) => ({
-                      label: r.name,
-                      value: r.id,
-                    }))}
-                    onChange={(selected) => {
-                      setSelectedRegion(selected);
-                      setSelectedGovernorate(null);
-                      field.onChange(selected?.label);
-                    }}
-                    value={selectedRegion}
-                    placeholder={t("Select region")}
-                    isClearable
-                  />
-                )}
-              />{" "}
-              {errors.region && (
-                <p className="text-red-600 text-sm mt-1">
-                  {" "}
-                  {errors.region.message}{" "}
-                </p>
-              )}{" "}
-            </div>{" "}
-            {/* Governorate */}{" "}
-            <div>
-              {" "}
-              <label className="block text-sm font-medium">
-                {" "}
-                {t("Governorate")}{" "}
-              </label>{" "}
-              <Controller
-                control={control}
-                name="governorate"
-                render={({ field }) => (
-                  <Select
-                    {...field}
-                    options={governorates.map((g) => ({
-                      label: g.name,
-                      value: g.id,
-                    }))}
-                    onChange={(selected) => {
-                      setSelectedGovernorate(selected);
-                      field.onChange(selected?.label);
-                    }}
-                    value={selectedGovernorate}
-                    placeholder={
-                      selectedRegion
-                        ? t("Select governorate")
-                        : t("Select region first")
-                    }
-                    isDisabled={!selectedRegion}
-                    isClearable
-                  />
-                )}
-              />{" "}
-              {errors.governorate && (
-                <p className="text-red-600 text-sm mt-1">
-                  {" "}
-                  {errors.governorate.message}{" "}
-                </p>
-              )}{" "}
-            </div>{" "}
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <div>
+            <label className="block text-sm font-medium">
+              {t("Country")}
+            </label>
+            <input
+              type="text"
+              value="Bangladesh"
+              readOnly
+              disabled
+              className="w-full p-1.5 border border-gray-200 rounded bg-gray-100 cursor-not-allowed"
+            />
           </div>
+          "}
+          <div>
+            {" "}
+            <label className="block text-sm font-medium">
+              {t("Region")}
+            </label>{" "}
+            <Controller
+              control={control}
+              name="region"
+              render={({ field }) => (
+                <Select
+                  {...field}
+                  options={regions.map((r) => ({
+                    label: r.name,
+                    value: r.id,
+                  }))}
+                  onChange={(selected) => {
+                    setSelectedRegion(selected);
+                    setSelectedGovernorate(null);
+                    field.onChange(selected?.label);
+                  }}
+                  value={selectedRegion}
+                  placeholder={t("Select region")}
+                  isClearable
+                />
+              )}
+            />{" "}
+            {errors.region && (
+              <p className="text-red-600 text-sm mt-1">
+                {" "}
+                {errors.region.message}{" "}
+              </p>
+            )}{" "}
+            </di"}
+          "}
+          <div>
+            {" "}
+            <label className="block text-sm font-medium">
+              {" "}
+              {t("Governorate")}{" "}
+            </label>{" "}
+            <Controller
+              control={control}
+              name="governorate"
+              render={({ field }) => (
+                <Select
+                  {...field}
+                  options={governorates.map((g) => ({
+                    label: g.name,
+                    value: g.id,
+                  }))}
+                  onChange={(selected) => {
+                    setSelectedGovernorate(selected);
+                    field.onChange(selected?.label);
+                  }}
+                  value={selectedGovernorate}
+                  placeholder={
+                    selectedRegion
+                      ? t("Select governorate")
+                      : t("Select region first")
+                  }
+                  isDisabled={!selectedRegion}
+                  isClearable
+                />
+              )}
+            />{" "}
+            {errors.governorate && (
+              <p className="text-red-600 text-sm mt-1">
+                {" "}
+                {errors.governorate.message}{" "}
+              </p>
+            )}{" "}
+            </di"}
+          </div> */}
 
           {/* Message */}
           <div className="mb-4">
@@ -411,7 +410,7 @@ const ContactForm = () => {
             {t("Send Message")}
           </button>
         </form>
-      </div>
+      </div >
       {/* 🚀 Future Enhancements (Planned): */}
       {/* <div className="space-y-6 max-w-xl">
         <InputField
@@ -449,7 +448,7 @@ const ContactForm = () => {
           </button>
         </div>
       </div> */}
-    </div>
+    </div >
   );
 };
 

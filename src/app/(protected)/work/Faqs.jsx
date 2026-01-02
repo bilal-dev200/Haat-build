@@ -209,7 +209,7 @@ export const Faqs = () => {
     pages_faq_details: [
       {
         id: 1,
-        question: t("Is Haat available across Saudi Arabia?"),
+        question: t("Is Haat available across Bangladesh?"),
         answer: t("Yes—Haat serves buyers and sellers across the Country."),
       },
       {

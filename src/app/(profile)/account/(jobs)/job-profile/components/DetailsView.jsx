@@ -57,9 +57,9 @@ const DetailsView = ({ data, onEdit, onAdd }) => {
 
         <div>
           <p className="font-semibold">{t("Preferred Role")}</p>
-<p>
- { Array.isArray(data.preferred_role) ? data.preferred_role.join(", ") : data.preferred_role || "-"}
-</p>
+          <p>
+            {Array.isArray(data.preferred_role) ? data.preferred_role.join(", ") : data.preferred_role || "-"}
+          </p>
 
 
         </div>
@@ -75,7 +75,7 @@ const DetailsView = ({ data, onEdit, onAdd }) => {
         </div>
 
         <div>
-          <p className="font-semibold">{t("Right to Work in Saudi Arabia")}</p>
+          <p className="font-semibold">{t("Right to Work")}</p>
           <p className="uppercase">{right_to_work_in_saudi ? t("Yes") : t("No")}</p>
         </div>
 

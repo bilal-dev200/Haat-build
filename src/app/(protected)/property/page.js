@@ -6,9 +6,9 @@ import {
 } from "@/lib/api/listings.server";
 
 export const metadata = {
-  title: "Properties for Sale & Rent in Saudi Arabia | Haat",
+  title: "Properties for Sale & Rent | Haat",
   description:
-    "Explore the latest properties for sale and rent in Saudi Arabia. Find apartments, villas, offices, and more across major cities with Haat.",
+    "Explore the latest properties for sale and rent. Find apartments, villas, offices, and more across major cities with Haat.",
 };
 
 export default async function page() {

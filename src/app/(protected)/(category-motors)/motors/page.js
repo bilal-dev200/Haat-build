@@ -6,9 +6,9 @@ import {
 import MotorsClient from "./MotorsClient";
 
 export const metadata = {
-  title: "Cars, Bikes & Vehicles for Sale in Saudi Arabia | Haat Motors",
+  title: "Cars, Bikes & Vehicles for Sale | Haat Motors",
   description:
-    "Discover the latest cars, bikes, and commercial vehicles for sale in Saudi Arabia. Find new and used vehicles from trusted sellers across major cities with Haat Motors.",
+    "Discover the latest cars, bikes, and commercial vehicles for sale. Find new and used vehicles from trusted sellers across major cities with Haat Motors.",
 };
 
 export default async function page() {
